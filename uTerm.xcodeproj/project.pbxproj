@@ -12,6 +12,10 @@
 		CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB691DC258CC00EC9007 /* MainMenu.xib */; };
 		CF0CAB761DC258CC00EC9007 /* uTermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB751DC258CC00EC9007 /* uTermTests.swift */; };
 		CF0CAB811DC258CC00EC9007 /* uTermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */; };
+		CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5D1DC4168800EC9007 /* AppKit.framework */; };
+		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
+		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
+		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +47,11 @@
 		CF0CAB7C1DC258CC00EC9007 /* uTermUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uTermUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uTermUITests.swift; sourceTree = "<group>"; };
 		CF0CAB821DC258CC00EC9007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF2E5A5D1DC4168800EC9007 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +59,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */,
+				CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */,
+				CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,10 +85,12 @@
 		CF0CAB591DC258CC00EC9007 = {
 			isa = PBXGroup;
 			children = (
+				CF938C4B1DC911DF00EC9007 /* BuildScripts */,
 				CF0CAB641DC258CC00EC9007 /* uTerm */,
 				CF0CAB741DC258CC00EC9007 /* uTermTests */,
 				CF0CAB7F1DC258CC00EC9007 /* uTermUITests */,
 				CF0CAB631DC258CC00EC9007 /* Products */,
+				CF2E5A5C1DC4168800EC9007 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -94,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
+				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
 				CF0CAB671DC258CC00EC9007 /* Assets.xcassets */,
 				CF0CAB691DC258CC00EC9007 /* MainMenu.xib */,
 				CF0CAB6C1DC258CC00EC9007 /* Info.plist */,
@@ -119,6 +134,25 @@
 			path = uTermUITests;
 			sourceTree = "<group>";
 		};
+		CF2E5A5C1DC4168800EC9007 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CF2E5A5D1DC4168800EC9007 /* AppKit.framework */,
+				CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */,
+				CF2E5A5F1DC4168800EC9007 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CF938C4B1DC911DF00EC9007 /* BuildScripts */ = {
+			isa = PBXGroup;
+			children = (
+				CF938C4C1DC9123200EC9007 /* set_build_number.sh */,
+			);
+			name = BuildScripts;
+			path = uTerm/BuildScripts;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +163,7 @@
 				CF0CAB5E1DC258CC00EC9007 /* Sources */,
 				CF0CAB5F1DC258CC00EC9007 /* Frameworks */,
 				CF0CAB601DC258CC00EC9007 /* Resources */,
+				CF938C4D1DC91C2300EC9007 /* Set Build Number */,
 			);
 			buildRules = (
 			);
@@ -182,7 +217,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "v2-lab";
 				TargetAttributes = {
 					CF0CAB611DC258CC00EC9007 = {
@@ -250,11 +285,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CF938C4D1DC91C2300EC9007 /* Set Build Number */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Set Build Number";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/uTerm/BuildScripts/set_build_number.sh";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CF0CAB5E1DC258CC00EC9007 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -320,6 +373,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -342,7 +396,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -369,6 +423,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -385,7 +440,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -396,6 +451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KNERK97WK8;
 				INFOPLIST_FILE = uTerm/Info.plist;
@@ -410,6 +466,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KNERK97WK8;
 				INFOPLIST_FILE = uTerm/Info.plist;
@@ -501,6 +558,7 @@
 				CF0CAB871DC258CC00EC9007 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF0CAB881DC258CC00EC9007 /* Build configuration list for PBXNativeTarget "uTermTests" */ = {
 			isa = XCConfigurationList;
@@ -509,6 +567,7 @@
 				CF0CAB8A1DC258CC00EC9007 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CF0CAB8B1DC258CC00EC9007 /* Build configuration list for PBXNativeTarget "uTermUITests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +576,7 @@
 				CF0CAB8D1DC258CC00EC9007 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
