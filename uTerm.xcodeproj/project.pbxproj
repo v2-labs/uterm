@@ -16,6 +16,7 @@
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
+		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,7 +87,6 @@
 		CF0CAB591DC258CC00EC9007 = {
 			isa = PBXGroup;
 			children = (
-				CF938C4B1DC911DF00EC9007 /* BuildScripts */,
 				CF0CAB641DC258CC00EC9007 /* uTerm */,
 				CF0CAB741DC258CC00EC9007 /* uTermTests */,
 				CF0CAB7F1DC258CC00EC9007 /* uTermUITests */,
@@ -107,8 +108,10 @@
 		CF0CAB641DC258CC00EC9007 /* uTerm */ = {
 			isa = PBXGroup;
 			children = (
+				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
+				CFCC8F201E9E885800EC9007 /* RunManager.swift */,
 				CF0CAB671DC258CC00EC9007 /* Assets.xcassets */,
 				CF0CAB691DC258CC00EC9007 /* MainMenu.xib */,
 				CF0CAB6C1DC258CC00EC9007 /* Info.plist */,
@@ -144,13 +147,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CF938C4B1DC911DF00EC9007 /* BuildScripts */ = {
+		CF66BCF01EE8FFA400EC9007 /* BuildScripts */ = {
 			isa = PBXGroup;
 			children = (
 				CF938C4C1DC9123200EC9007 /* set_build_number.sh */,
 			);
-			name = BuildScripts;
-			path = uTerm/BuildScripts;
+			path = BuildScripts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,6 +310,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
+				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -451,7 +454,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KNERK97WK8;
 				INFOPLIST_FILE = uTerm/Info.plist;
@@ -466,7 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = KNERK97WK8;
 				INFOPLIST_FILE = uTerm/Info.plist;
