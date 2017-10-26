@@ -20,7 +20,6 @@ class StatusMenuController: NSObject {
         icon?.isTemplate = true
         statusItem.menu = statusMenu
         statusItem.image = icon
-        // statusItem.title = "uTerm"
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
