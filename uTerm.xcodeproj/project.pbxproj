@@ -17,6 +17,9 @@
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
 		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
+		CFDF62E21FA815FD00C5038F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */; };
+		CFDF62E31FA815FD00C5038F /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */; };
+		CFDF62E51FA918EF00C5038F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,9 @@
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
+		CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewController.xib; path = ../Preferences/PreferencesViewController.xib; sourceTree = "<group>"; };
+		CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
+				CFDF62E61FA9190C00C5038F /* Preferences */,
 				CFCC8F201E9E885800EC9007 /* RunManager.swift */,
 				CF0CAB671DC258CC00EC9007 /* Assets.xcassets */,
 				CF0CAB691DC258CC00EC9007 /* MainMenu.xib */,
@@ -153,6 +160,16 @@
 				CF938C4C1DC9123200EC9007 /* set_build_number.sh */,
 			);
 			path = BuildScripts;
+			sourceTree = "<group>";
+		};
+		CFDF62E61FA9190C00C5038F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */,
+				CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */,
+				CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,6 +286,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDF62E31FA815FD00C5038F /* PreferencesViewController.xib in Resources */,
 				CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */,
 				CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */,
 			);
@@ -312,7 +330,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFDF62E21FA815FD00C5038F /* PreferencesViewController.swift in Sources */,
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
+				CFDF62E51FA918EF00C5038F /* PreferencesWindowController.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
 			);

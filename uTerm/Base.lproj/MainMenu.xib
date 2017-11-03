@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13529" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="12121"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13529"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
@@ -27,7 +28,11 @@
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="7NN-Mc-QKb"/>
-                <menuItem title="Preferences..." keyEquivalent="," id="gqN-Ku-mug"/>
+                <menuItem title="Preferences..." keyEquivalent="," id="gqN-Ku-mug">
+                    <connections>
+                        <action selector="openPreferences:" target="5MT-V6-JSG" id="9i7-Qp-j0C"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="zSC-En-haA"/>
                 <menuItem title="Quit" keyEquivalent="q" id="V3h-yo-beH">
                     <connections>
@@ -35,7 +40,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="52" y="24"/>
+            <point key="canvasLocation" x="-77.5" y="-24.5"/>
         </menu>
     </objects>
 </document>
