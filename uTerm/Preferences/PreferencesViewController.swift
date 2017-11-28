@@ -11,7 +11,7 @@ import Cocoa
 class PreferencesViewController: NSTabViewController {
 
     var tabViewSizes = [String: SizeArchiver]()
-    private let preferenceManager = PreferenceManager.sharedInstance
+    private let preferenceManager = PreferenceManager.shared
 
     override func viewDidLoad() {
         readTabViewSizes()

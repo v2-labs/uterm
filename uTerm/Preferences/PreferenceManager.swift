@@ -10,7 +10,7 @@ import Cocoa
 
 class PreferenceManager {
     // Single shared instance (Singleton)
-    static let sharedInstance = PreferenceManager()
+    static let shared = PreferenceManager()
     // Get the instance of user preferences
     let userDefaults = UserDefaults()
     // Prepare an enum for the stored user' preferences keys

@@ -10,7 +10,7 @@ import Cocoa
 
 class AppearanceViewController: NSViewController {
 
-    private let preferenceManager = PreferenceManager.sharedInstance
+    private let preferenceManager = PreferenceManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
