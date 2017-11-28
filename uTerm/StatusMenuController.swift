@@ -22,10 +22,9 @@ class StatusMenuController: NSObject {
     }
 
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        if self.preferences == nil {
-            self.preferences = PreferencesWindowController()
-        }
-        self.preferences.showWindow(self)
+        let preferencesController = PreferencesWindowController(windowNibName: NSNib.Name(rawValue: "Preferences"))
+        preferencesController.showWindow(self)
+        self.preferences = preferencesController
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {

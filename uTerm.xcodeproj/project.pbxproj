@@ -12,13 +12,17 @@
 		CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB691DC258CC00EC9007 /* MainMenu.xib */; };
 		CF0CAB761DC258CC00EC9007 /* uTermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB751DC258CC00EC9007 /* uTermTests.swift */; };
 		CF0CAB811DC258CC00EC9007 /* uTermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */; };
+		CF1CAF4D1FBA0632003CC620 /* SizeArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF4C1FBA0632003CC620 /* SizeArchiver.swift */; };
+		CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */; };
+		CF1CAF511FBA30FB003CC620 /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF501FBA30FB003CC620 /* PreferenceManager.swift */; };
+		CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */; };
 		CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5D1DC4168800EC9007 /* AppKit.framework */; };
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
+		CFB712961FAE4F3400FFAACD /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFB712951FAE4F3400FFAACD /* Preferences.xib */; };
 		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
 		CFDF62E21FA815FD00C5038F /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */; };
-		CFDF62E31FA815FD00C5038F /* PreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */; };
 		CFDF62E51FA918EF00C5038F /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,14 +55,18 @@
 		CF0CAB7C1DC258CC00EC9007 /* uTermUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uTermUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uTermUITests.swift; sourceTree = "<group>"; };
 		CF0CAB821DC258CC00EC9007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF1CAF4C1FBA0632003CC620 /* SizeArchiver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeArchiver.swift; sourceTree = "<group>"; };
+		CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		CF1CAF501FBA30FB003CC620 /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
 		CF2E5A5D1DC4168800EC9007 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		CFB712951FAE4F3400FFAACD /* Preferences.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
 		CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
-		CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = PreferencesViewController.xib; path = ../Preferences/PreferencesViewController.xib; sourceTree = "<group>"; };
 		CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,8 +174,12 @@
 			isa = PBXGroup;
 			children = (
 				CFDF62E41FA918EF00C5038F /* PreferencesWindowController.swift */,
+				CFB712951FAE4F3400FFAACD /* Preferences.xib */,
 				CFDF62E01FA815FD00C5038F /* PreferencesViewController.swift */,
-				CFDF62E11FA815FD00C5038F /* PreferencesViewController.xib */,
+				CF1CAF4C1FBA0632003CC620 /* SizeArchiver.swift */,
+				CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */,
+				CF1CAF501FBA30FB003CC620 /* PreferenceManager.swift */,
+				CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -286,8 +298,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFDF62E31FA815FD00C5038F /* PreferencesViewController.xib in Resources */,
 				CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */,
+				CFB712961FAE4F3400FFAACD /* Preferences.xib in Resources */,
 				CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -330,8 +342,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1CAF4D1FBA0632003CC620 /* SizeArchiver.swift in Sources */,
+				CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */,
+				CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */,
 				CFDF62E21FA815FD00C5038F /* PreferencesViewController.swift in Sources */,
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
+				CF1CAF511FBA30FB003CC620 /* PreferenceManager.swift in Sources */,
 				CFDF62E51FA918EF00C5038F /* PreferencesWindowController.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
@@ -409,7 +425,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -428,7 +444,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -466,7 +482,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -479,7 +495,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -491,13 +507,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KNERK97WK8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uTerm";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -507,13 +526,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KNERK97WK8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uTerm";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
