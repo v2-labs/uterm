@@ -11,7 +11,7 @@ import Cocoa
 class StatusMenuController: NSObject {
 
     @IBOutlet weak var statusMenu: NSMenu!
-    private var preferences: PreferencesWindowController!
+    private var preferences: PreferencesController!
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     override func awakeFromNib() {
@@ -22,9 +22,11 @@ class StatusMenuController: NSObject {
     }
 
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        let preferencesController = PreferencesWindowController(windowNibName: NSNib.Name(rawValue: "Preferences"))
-        preferencesController.showWindow(self)
-        self.preferences = preferencesController
+        if self.preferences == nil {
+            self.preferences = PreferencesController()
+        }
+        //NSLog("Showing %@", self.preferences)
+        self.preferences.showWindow(self)
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {

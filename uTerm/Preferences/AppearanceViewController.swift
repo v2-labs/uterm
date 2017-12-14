@@ -9,8 +9,12 @@
 import Cocoa
 
 class AppearanceViewController: NSViewController {
+    // Tie the controller to its XIB file.
+    override var nibName: NSNib.Name {
+        return NSNib.Name("PreferencesAppearanceView")
+    }
 
-    private let preferenceManager = PreferenceManager.shared
+    //private let preferenceManager = PreferenceManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()

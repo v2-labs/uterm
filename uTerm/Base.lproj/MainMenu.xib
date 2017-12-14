@@ -30,7 +30,7 @@
                 <menuItem isSeparatorItem="YES" id="7NN-Mc-QKb"/>
                 <menuItem title="Preferences..." keyEquivalent="," id="gqN-Ku-mug">
                     <connections>
-                        <action selector="openPreferences:" target="5MT-V6-JSG" id="9i7-Qp-j0C"/>
+                        <action selector="openPreferences:" target="5MT-V6-JSG" id="iGK-Os-nQH"/>
                     </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="zSC-En-haA"/>

@@ -1,22 +1,19 @@
 //
-//  GeneralViewController.swift
+//  AdvancedViewController.swift
 //  uTerm
 //
-//  Created by Juvenal A. Silva Jr. on 11/13/17.
+//  Created by Juvenal A. Silva Jr. on 12/14/17.
 //  Copyright © 2017 v2-lab. All rights reserved.
 //
 
 import Cocoa
 
-class GeneralViewController: NSViewController {
+class AdvancedViewController: NSViewController {
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
-        return NSNib.Name("PreferencesGeneralView")
+        return NSNib.Name("PreferencesAdvancedView")
     }
-    // Note: Should bind the checkbox's value to it.
-    //@objc dynamic var launchAtLogin = false
 
-    //private let preferenceManager = PreferenceManager.shared
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +24,6 @@ class GeneralViewController: NSViewController {
         super.viewWillAppear()
         // Note: Beside this way, another way is directly bound to user defaults.
         //       Check the bind for "Warn before quit".
-        //launchAtLogin = preferenceManager.launchAtLogin
     }
+
 }
