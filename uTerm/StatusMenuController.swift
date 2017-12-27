@@ -15,21 +15,27 @@ class StatusMenuController: NSObject {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
 
     override func awakeFromNib() {
-        let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
-        icon?.isTemplate = true
         statusItem.menu = statusMenu
-        statusItem.image = icon
+        if let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon")) {
+            icon.isTemplate = true
+            statusItem.image = icon
+        }
     }
 
     @IBAction func openPreferences(_ sender: NSMenuItem) {
-        if self.preferences == nil {
-            self.preferences = PreferencesController()
+        if preferences == nil {
+            preferences = PreferencesController()
         }
-        //NSLog("Showing %@", self.preferences)
-        self.preferences.showWindow(self)
+        //NSLog("Showing %@", preferences)
+        preferences.showWindow(self)
+        // Make sure to have it pushed to front
+        NSApp.activate(ignoringOtherApps: true)
+        // If in another space, bring it to you
+        preferences.window!.collectionBehavior = .moveToActiveSpace
     }
 
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared.terminate(self)
+        NSApp.terminate(self)
+        //NSApplication.shared.terminate(self)
     }
 }

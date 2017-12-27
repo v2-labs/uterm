@@ -13,6 +13,11 @@ class AdvancedViewController: NSViewController {
     override var nibName: NSNib.Name {
         return NSNib.Name("PreferencesAdvancedView")
     }
+    // Access to preferenceMsnager singleton
+    private let preferenceManager = PreferenceManager.shared
+    // View's subviews controls (outlets)
+    @IBOutlet weak var loginMode: NSButton!
+    @IBOutlet weak var environmentVars: NSTableView!
 
 
     override func viewDidLoad() {
@@ -22,8 +27,23 @@ class AdvancedViewController: NSViewController {
 
     override func viewWillAppear() {
         super.viewWillAppear()
-        // Note: Beside this way, another way is directly bound to user defaults.
-        //       Check the bind for "Warn before quit".
+        //
+        loginMode.state = preferenceManager.terminalUseLogin ?
+                            NSControl.StateValue.on : NSControl.StateValue.off
+        print("loginMode checkbox: \(loginMode.state)")
     }
 
+    @IBAction func loginMode(_ sender: NSButton) {
+        preferenceManager.terminalUseLogin = (loginMode.state == NSControl.StateValue.on)
+        print("loginMode control: \(loginMode.state)")
+        print("loginMode preference: \(preferenceManager.terminalUseLogin)")
+    }
+
+    @IBAction func modifyTableRows(_ sender: Any) {
+
+    }
+
+    @IBAction func resetTableRows(_ sender: Any) {
+
+    }
 }

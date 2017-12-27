@@ -31,7 +31,9 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
                                        "tooltip":  "Advanced options",
                                        "image":    "NSAdvanced"]
     ]
-    // View display control properties
+    // Default properties' view control
+    let defaultView = "General"
+    // Name of properties' view control active
     var currentView = ""
     // Set the active current view controller
     var currentViewController:NSViewController!
@@ -53,11 +55,16 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         toolbar.delegate = self
         // Attach the created toolbar to the preferences NSPanel
         self.window!.toolbar = toolbar
+        // Check the need for a default setup
+        if self.currentView.isEmpty {
+            self.loadView(viewIdentifier: self.defaultView, withAnimation: false)
+            self.window!.toolbar!.selectedItemIdentifier = NSToolbarItem.Identifier(rawValue: self.defaultView)
+        }
     }
 
     // Managament of preference NSPanel views
     @IBAction func viewSelected(sender: NSToolbarItem) {
-        loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
+        self.loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
     }
 
     func loadView(viewIdentifier: String, withAnimation shouldAnimate:Bool) {
@@ -67,27 +74,33 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         self.currentView = viewIdentifier
         // Set the new view controller
         if self.currentView == "General" {
-            //
+            // Load the preferences' general view
             self.currentViewController = GeneralViewController()
         }
         else if self.currentView == "Appearance" {
-            //
+            // Load the preferences' appearance view
             self.currentViewController = AppearanceViewController()
         }
         else if self.currentView == "Advanced" {
-            //
+            // Load the preferences' advanced view
             self.currentViewController = AdvancedViewController()
         }
         // Collect its bounds and frame
         let newView = self.currentViewController.view
         let windowRect = self.window!.frame
+        let viewRect = self.window!.contentView!.frame
         let currentViewRect = newView.frame
         // Calculate the new window size for new view
-        self.window!.contentView = newView
-        let yPos = windowRect.origin.y + (windowRect.size.height - (currentViewRect.size.height + 80))
-        let newFrame = NSMakeRect(windowRect.origin.x, yPos, currentViewRect.size.width, currentViewRect.size.height + 80)
-        // Adjust the window for the new size (with possible animation)
+        let winHeader = windowRect.size.height - viewRect.size.height
+        let yPos = windowRect.origin.y + viewRect.size.height - currentViewRect.size.height
+        let newHeight = currentViewRect.size.height + winHeader
+        let newFrame = NSMakeRect(windowRect.origin.x, yPos, currentViewRect.size.width, newHeight)
+        // Adjust the window for the new size (with possible animation), then set new view
+        // the sequence of operations are really important
+        self.window!.contentView = nil
+        self.window!.title = self.currentView
         self.window!.setFrame(newFrame, display: true, animate: shouldAnimate)
+        self.window!.contentView = newView
     }
 
     // MARK: - NSToolbarDelegate

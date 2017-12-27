@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */; };
 		CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */; };
+		CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD71FE8B9FB00281E23 /* TerminalController.swift */; };
+		CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */; };
 		CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */; };
 		CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB671DC258CC00EC9007 /* Assets.xcassets */; };
 		CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB691DC258CC00EC9007 /* MainMenu.xib */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAdvancedView.xib; sourceTree = "<group>"; };
 		CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedViewController.swift; sourceTree = "<group>"; };
+		CF014DD71FE8B9FB00281E23 /* TerminalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalController.swift; sourceTree = "<group>"; };
+		CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TerminalPanel.xib; sourceTree = "<group>"; };
 		CF0CAB621DC258CC00EC9007 /* uTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF0CAB671DC258CC00EC9007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +110,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF014DD61FE8B93500281E23 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				CF014DD71FE8B9FB00281E23 /* TerminalController.swift */,
+				CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
 		CF0CAB591DC258CC00EC9007 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +143,7 @@
 		CF0CAB641DC258CC00EC9007 /* uTerm */ = {
 			isa = PBXGroup;
 			children = (
+				CF014DD61FE8B93500281E23 /* Terminal */,
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
@@ -314,6 +328,7 @@
 				CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */,
 				CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */,
 				CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */,
+				CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */,
 				CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */,
 				CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */,
 			);
@@ -361,6 +376,7 @@
 				CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */,
 				CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */,
 				CFDF62E21FA815FD00C5038F /* PreferencesViewController.swift in Sources */,
+				CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */,
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
 				CF1CAF511FBA30FB003CC620 /* PreferenceManager.swift in Sources */,
 				CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */,
