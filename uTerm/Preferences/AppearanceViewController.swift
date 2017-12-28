@@ -18,11 +18,12 @@ class AppearanceViewController: NSViewController {
     // List of installed terminal interpreters (update to a dynamic gathering)
     private let termInterps = ["/bin/bash", "/bin/csh", "/bin/ksh", "/bin/sh", "/bin/tcsh", "/bin/zsh"]
     // Access to preferenceMsnager singleton
-    private let preferenceManager = PreferenceManager.shared
+    private let preferencesModel = PreferencesModel.shared
     // View's subviews controls (outlets)
     @IBOutlet weak var terminalType: NSPopUpButton!
     @IBOutlet weak var terminalInterpreter: NSPopUpButton!
 
+    // MARK: - AppearanceViewController delegate methods
 
     /**
      Description:
@@ -33,11 +34,7 @@ class AppearanceViewController: NSViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Setup the PopupButtons
-        terminalType.removeAllItems()
-        terminalType.addItems(withTitles: termTypes)
-        terminalInterpreter.removeAllItems()
-        terminalInterpreter.addItems(withTitles: termInterps)
+        setupViewElements()
     }
 
     /**
@@ -49,17 +46,35 @@ class AppearanceViewController: NSViewController {
     */
     override func viewWillAppear() {
         super.viewWillAppear()
-        // .
-        if termTypes.contains(preferenceManager.terminalType) {
-            terminalType.selectItem(withTitle: preferenceManager.terminalType)
+        updateViewElements()
+    }
+
+    // MARK: - AppearanceViewController private methods
+
+    /**
+     */
+    fileprivate func setupViewElements() {
+        // Setup the PopUpButtons
+        terminalType.removeAllItems()
+        terminalType.addItems(withTitles: termTypes)
+        terminalInterpreter.removeAllItems()
+        terminalInterpreter.addItems(withTitles: termInterps)
+    }
+
+    /**
+     */
+    fileprivate func updateViewElements() {
+        // Update the PopUpButtons status and values
+        if termTypes.contains(preferencesModel.terminalType) {
+            terminalType.selectItem(withTitle: preferencesModel.terminalType)
         }
         else {
             terminalType.selectItem(withTitle: termTypes[0])
         }
         print("terminalType PopupButton: \(terminalType.titleOfSelectedItem!)")
         //
-        if termInterps.contains(preferenceManager.terminalInterpreter) {
-            terminalInterpreter.selectItem(withTitle: preferenceManager.terminalInterpreter)
+        if termInterps.contains(preferencesModel.terminalInterpreter) {
+            terminalInterpreter.selectItem(withTitle: preferencesModel.terminalInterpreter)
         }
         else {
             terminalInterpreter.selectItem(withTitle: termInterps[0])
@@ -67,17 +82,22 @@ class AppearanceViewController: NSViewController {
         print("terminalInterpreter PopupButton: \(terminalInterpreter.titleOfSelectedItem!)")
     }
 
+    // MARK: - AppearanceViewController action methods
+
     /**
      Description:
      This is the action to perform when the terminalType NSPopUpButtom changes
      selection. It basically updates the proper userDefaults key through the
-     singleton preferenceManager property.
+     singleton preferencesModel property.
      */
-    @IBAction func terminalType(_ sender: AnyObject) {
+    @IBAction func terminalType(_ sender: Any) {
         if let termType = sender as? NSPopUpButton {
-            preferenceManager.terminalType = termType.titleOfSelectedItem!
+            preferencesModel.terminalType = termType.titleOfSelectedItem!
             print("PopUpButton 1: \(termType.titleOfSelectedItem!)")
-            print("Preferences: \(preferenceManager.terminalType)")
+            print("Preferences: \(preferencesModel.terminalType)")
+        }
+        else {
+            NSLog("")
         }
     }
 
@@ -85,13 +105,16 @@ class AppearanceViewController: NSViewController {
      Description:
      This is the action to perform when the terminalInterpreter NSPopUpButtom
      changes selection. It basically updates the proper userDefaults key through
-     the singleton preferenceManager property.
+     the singleton preferencesModel property.
      */
     @IBAction func terminalInterpreter(_ sender: AnyObject) {
         if let termInterp = sender as? NSPopUpButton {
-            preferenceManager.terminalInterpreter = termInterp.titleOfSelectedItem!
+            preferencesModel.terminalInterpreter = termInterp.titleOfSelectedItem!
             print("PopUpButton 2: \(termInterp.titleOfSelectedItem!)")
-            print("Preferences: \(preferenceManager.terminalInterpreter)")
+            print("Preferences: \(preferencesModel.terminalInterpreter)")
+        }
+        else {
+            NSLog("")
         }
     }
 }

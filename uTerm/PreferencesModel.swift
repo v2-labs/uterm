@@ -8,9 +8,9 @@
 
 import Cocoa
 
-class PreferenceManager {
+class PreferencesModel {
     // Single shared instance (Singleton)
-    static let shared = PreferenceManager()
+    static let shared = PreferencesModel()
     // Get the instance of user preferences
     let userDefaults = UserDefaults()
     // Prepare an enum for the stored user' preferences keys
@@ -27,10 +27,7 @@ class PreferenceManager {
         static let KeepActionsResults = "keepActionsResults"
         static let TerminalUseLogin = "terminalUseLogin"
         static let TerminalEnvironment = "terminalEnvironment"
-        static let TabViewSizes = "tabViewSizes"
     }
-    // Serializable CGRect to keep the window size
-    private let defaultTabViewSizes = [String: SizeArchiver]()
 
     // Computed properties based on the store Keys above
     var launchAtLogin: Bool {
@@ -144,27 +141,12 @@ class PreferenceManager {
         }
     }
 
-    var terminalEnvironment: [String: Any?] {
+    var terminalEnvironment: [Any?] {
         get {
-            return userDefaults.dictionary(forKey: Keys.TerminalEnvironment)!
+            return userDefaults.array(forKey: Keys.TerminalEnvironment)!
         }
         set {
             userDefaults.set(newValue, forKey: Keys.TerminalEnvironment)
-        }
-    }
-
-    var tabViewSizes: [String: SizeArchiver] {
-        get {
-            if let data = userDefaults.object(forKey: Keys.TabViewSizes) as? NSData {
-                if let sizes = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? [String: SizeArchiver] {
-                    return sizes
-                }
-            }
-            return defaultTabViewSizes
-        }
-        set {
-            let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            userDefaults.set(data, forKey: Keys.TabViewSizes)
         }
     }
 
@@ -189,8 +171,7 @@ class PreferenceManager {
                 Keys.TerminalTextAntialias: NSNumber(value: true),
                 Keys.KeepActionsResults: Int(5),
                 Keys.TerminalUseLogin: NSNumber(value: false),
-                Keys.TerminalEnvironment: ["LC_CTYPE": "UTF-8", "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin", "TERM": "dumb", "TERM_PROGRAM": "uTerm"],
-                Keys.TabViewSizes: defaultTabViewSizes,
+                Keys.TerminalEnvironment: [["Name": "LC_CTYPE", "Value": "UTF-8"], ["Name": "PATH", "Value": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"], ["Name": "TERM", "Value": "dumb"], ["Name": "TERM_PROGRAM", "Value": "uTerm"]],
             ] as [String : Any]
 
         userDefaults.register(defaults: factoryDefaults)
@@ -210,7 +191,6 @@ class PreferenceManager {
         userDefaults.removeObject(forKey: Keys.KeepActionsResults)
         userDefaults.removeObject(forKey: Keys.TerminalUseLogin)
         userDefaults.removeObject(forKey: Keys.TerminalEnvironment)
-        userDefaults.removeObject(forKey: Keys.TabViewSizes)
         synchronize()
     }
 

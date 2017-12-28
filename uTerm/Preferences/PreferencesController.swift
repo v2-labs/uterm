@@ -96,7 +96,7 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         let newHeight = currentViewRect.size.height + winHeader
         let newFrame = NSMakeRect(windowRect.origin.x, yPos, currentViewRect.size.width, newHeight)
         // Adjust the window for the new size (with possible animation), then set new view
-        // the sequence of operations are really important
+        // the sequence of operations are really important for the final visual effect
         self.window!.contentView = nil
         self.window!.title = self.currentView
         self.window!.setFrame(newFrame, display: true, animate: shouldAnimate)

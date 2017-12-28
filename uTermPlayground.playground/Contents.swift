@@ -17,6 +17,7 @@ var str = "Hello, playground"
 
 //contentGeneralView
 
+
 class ViewController: NSViewController {
     var tableView: NSTableView!
     var infoLabel: NSTextField!
@@ -62,6 +63,7 @@ class ViewController: NSViewController {
         buildUI()
     }
 }
+
 
 //let master = NSView(frame: NSMakeRect(0, 0, 500, 500))
 //let viewController = ViewController()
