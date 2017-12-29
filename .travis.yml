@@ -1,0 +1,7 @@
+language: objective-c
+osx_image: xcode9
+
+xcode_project: uTerm.xcodeproj
+xcode_scheme: uTerm
+
+script: xcrun xcodebuild build -project uTerm.xcodeproj -scheme uTerm -sdk macosx
