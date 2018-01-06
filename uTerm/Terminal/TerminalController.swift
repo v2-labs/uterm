@@ -17,8 +17,17 @@ class TerminalController: NSWindowController {
 
     override func windowDidLoad() {
         super.windowDidLoad()
-    
-        // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+        // Setup the window
+
+        // Move the window into view with appropriate size
+        slideWindowDown(to: CGPoint(x: 100, y: 100), size: CGPoint(x: 200, y: 350), animated: true)
+        // Activate and
     }
 
+
+
+    // MARK: - TerminalController private methods
+    fileprivate func slideWindowDown(to: CGPoint, size: CGPoint, animated: Bool) {
+        //
+    }
 }

@@ -12,6 +12,7 @@ class StatusMenuController: NSObject {
     //
     private var about: AboutWindow!
     private var preferences: PreferencesController!
+    private var terminalPanel: TerminalController!
     let appStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
     //
     @IBOutlet weak var statusMenu: NSMenu!

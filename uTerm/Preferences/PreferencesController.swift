@@ -25,7 +25,7 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
                         "Appearance": ["label":    "Appearance",
                                        "palette":  "Appearance",
                                        "tooltip":  "Appearance options",
-                                       "image":    "NSStatusAvailable"],
+                                       "image":    "Appearance"],
                         "Advanced":   ["label":    "Advanced",
                                        "palette":  "Advanced",
                                        "tooltip":  "Advanced options",

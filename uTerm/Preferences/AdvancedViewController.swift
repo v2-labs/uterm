@@ -8,7 +8,8 @@
 
 import Cocoa
 
-class AdvancedViewController: NSViewController, NSTableViewDelegate, NSTableViewDataSource {
+class AdvancedViewController: NSViewController,
+                              NSTableViewDelegate, NSTableViewDataSource {
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
         return NSNib.Name("PreferencesAdvancedView")
@@ -53,13 +54,47 @@ class AdvancedViewController: NSViewController, NSTableViewDelegate, NSTableView
     /**
      */
     @IBAction func modifyTableRows(_ sender: Any) {
-
+        //
+        if let modifyTableRows = sender as? NSSegmentedControl {
+            // Adding new environment variable to the list
+            if modifyTableRows.selectedSegment == 0 {
+                // Inform the selected segment
+                print("Segment 0 was selected")
+                // Define the insertion point
+                let position = environmentVars.selectedRow == -1 ? preferencesModel.terminalEnvironment.count - 1 : environmentVars.selectedRow
+                //
+                preferencesModel.terminalEnvironment.insert([:], at: position + 1)
+                //
+                environmentVars.beginUpdates()
+                environmentVars.insertRows(at: IndexSet(integer: position), withAnimation: .effectFade)
+                environmentVars.endUpdates()
+                //
+                environmentVars.selectRowIndexes(IndexSet(integer: position + 1), byExtendingSelection: false)
+            }
+            // Remove *selected* environment variable from the list
+            if modifyTableRows.selectedSegment == 1 {
+                // Inform the selected segment
+                print("Segment 1 was selected")
+                // Only remove *SELECTED* environment variables
+                if environmentVars.selectedRow != -1 {
+                    //
+                    let selected = environmentVars.selectedRow
+                    //
+                    environmentVars.beginUpdates()
+                    environmentVars.removeRows(at: IndexSet(integer: selected - 1), withAnimation: .effectFade)
+                    environmentVars.endUpdates()
+                    //
+                    preferencesModel.terminalEnvironment.remove(at: selected)
+                }
+            }
+        }
     }
 
     /**
      */
     @IBAction func resetTableRows(_ sender: Any) {
-
+        preferencesModel.resetTerminalEnvironment()
+        environmentVars.reloadData()
     }
 
     // MARK: - AdvancedViewController private methods
@@ -87,9 +122,8 @@ class AdvancedViewController: NSViewController, NSTableViewDelegate, NSTableView
     /**
      */
     func tableViewSelectionDidChange(_ notification: Notification) {
-        //.
-        let row = environmentVars.selectedRow
-        if row == -1 {
+        //
+        if environmentVars.selectedRow == -1 {
             //
         }
         else {
@@ -107,17 +141,35 @@ class AdvancedViewController: NSViewController, NSTableViewDelegate, NSTableView
 
     /**
      */
-    func tableView(_ tableView: NSTableView, objectValueFor tableColumn: NSTableColumn?, row: Int) -> Any? {
-        if let dictRow = preferencesModel.terminalEnvironment[row] as? [String: String] {
-            print("Row element: \(dictRow)")
-            print("Column Key: \(tableColumn!.identifier.rawValue)")
-            let element = dictRow[tableColumn!.identifier.rawValue]!
+    func tableView(_ tableView: NSTableView,
+                   objectValueFor tableColumn: NSTableColumn?,
+                   row: Int) -> Any? {
+        let dictRow = preferencesModel.terminalEnvironment[row]
+        print("Row element: \(dictRow)")
+        print("Column Key: \(tableColumn!.identifier.rawValue)")
+        if let element = dictRow[tableColumn!.identifier.rawValue] {
             print("Column element: \(element)")
             return element
         }
         else {
-            NSLog("")
             return nil
+        }
+    }
+
+    /**
+     */
+    func tableView(_ aTableView: NSTableView,
+                   setObjectValue anObject: Any?,
+                   for aTableColumn: NSTableColumn?,
+                   row rowIndex: Int) {
+        //
+        print("anObject: \(String(describing: anObject))")
+        print("aTableColumn: \(String(describing: aTableColumn))")
+        print("rowIndex: \(rowIndex)")
+        //
+        if let newValue = anObject as? String,
+           let tableColumn = aTableColumn {
+            preferencesModel.terminalEnvironment[rowIndex][tableColumn.identifier.rawValue] = newValue
         }
     }
 }

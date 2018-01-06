@@ -17,7 +17,7 @@ class PreferencesModel {
     enum Keys {
         static let LaunchAtLogin = "launchAtLogin"
         static let ActivationHotKey = "activationHotKey"
-        static let KindOfActivation = "kindOfActivatoin"
+        static let KindOfActivation = "kindOfActivation"
         static let TerminalType = "terminalType"
         static let TerminalInterpreter = "terminalInterpreter"
         static let TerminalFont = "terminalFont"
@@ -28,6 +28,19 @@ class PreferencesModel {
         static let TerminalUseLogin = "terminalUseLogin"
         static let TerminalEnvironment = "terminalEnvironment"
     }
+    // Some default values used internally
+    private let defaultTerminalEnvironment: [[String:String]] = [ ["Name": "LC_CTYPE",
+                                                                   "Value": "UTF-8"],
+                                                                  ["Name": "PATH",
+                                                                   "Value": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"],
+                                                                  ["Name": "TERM",
+                                                                   "Value": "dumb"],
+                                                                  ["Name": "TERM_PROGRAM",
+                                                                   "Value": "uTerm"]
+    ]
+    private let defaultTerminalFont: NSFont = NSFont.userFixedPitchFont(ofSize: CGFloat(0.0))!
+    private let defaultColorBackground: NSColor = NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70)
+    private let defaultColorForeground: NSColor = NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
 
     // Computed properties based on the store Keys above
     var launchAtLogin: Bool {
@@ -66,12 +79,18 @@ class PreferencesModel {
         }
     }
 
-    var terminalFont: [String: Any?] {
+    var terminalFont: NSFont {
         get {
-            return userDefaults.dictionary(forKey: Keys.TerminalFont)!
+            if let data = userDefaults.object(forKey: Keys.TerminalFont) as? NSData {
+                if let font = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? NSFont {
+                    return font
+                }
+            }
+            return defaultTerminalFont
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalFont)
+            let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
+            userDefaults.set(data, forKey: Keys.TerminalFont)
         }
     }
 
@@ -141,9 +160,9 @@ class PreferencesModel {
         }
     }
 
-    var terminalEnvironment: [Any?] {
+    var terminalEnvironment: [[String: String]] {
         get {
-            return userDefaults.array(forKey: Keys.TerminalEnvironment)!
+            return userDefaults.array(forKey: Keys.TerminalEnvironment) as! [[String: String]]
         }
         set {
             userDefaults.set(newValue, forKey: Keys.TerminalEnvironment)
@@ -157,27 +176,36 @@ class PreferencesModel {
 
     // Set factory defaults
     private func registerFactoryDefaults() {
-        let colorBackground = NSKeyedArchiver.archivedData(withRootObject: NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70))
-        let colorForeground = NSKeyedArchiver.archivedData(withRootObject: NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00))
         let factoryDefaults = [
                 Keys.LaunchAtLogin: NSNumber(value: false),
                 Keys.ActivationHotKey: "",
                 Keys.KindOfActivation: "Screen",
                 Keys.TerminalType: "dumb",
                 Keys.TerminalInterpreter: "/bin/bash",
-                Keys.TerminalFont: ["Family":"Monaco", "Weight":"Regular", "Size":12],
-                Keys.ColorBackground: colorBackground,
-                Keys.ColorForeground: colorForeground,
+                Keys.TerminalFont: NSKeyedArchiver.archivedData(withRootObject: defaultTerminalFont),
+                Keys.ColorBackground: NSKeyedArchiver.archivedData(withRootObject: defaultColorBackground),
+                Keys.ColorForeground: NSKeyedArchiver.archivedData(withRootObject: defaultColorForeground),
                 Keys.TerminalTextAntialias: NSNumber(value: true),
                 Keys.KeepActionsResults: Int(5),
                 Keys.TerminalUseLogin: NSNumber(value: false),
-                Keys.TerminalEnvironment: [["Name": "LC_CTYPE", "Value": "UTF-8"], ["Name": "PATH", "Value": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"], ["Name": "TERM", "Value": "dumb"], ["Name": "TERM_PROGRAM", "Value": "uTerm"]],
+                Keys.TerminalEnvironment: defaultTerminalEnvironment,
             ] as [String : Any]
-
+        // Register userDefaults with factoryDefaults
         userDefaults.register(defaults: factoryDefaults)
     }
 
-    // Reset settings
+    // Set terminal font to defaults
+    func resetTerminalFont() {
+        let data = NSKeyedArchiver.archivedData(withRootObject: defaultTerminalFont)
+        userDefaults.set(data, forKey: Keys.TerminalFont)
+    }
+
+    // Set terminal environment to default
+    func resetTerminalEnvironment() {
+        userDefaults.set(defaultTerminalEnvironment, forKey: Keys.TerminalEnvironment)
+    }
+
+    // Reset all settings
     func reset() {
         userDefaults.removeObject(forKey: Keys.LaunchAtLogin)
         userDefaults.removeObject(forKey: Keys.ActivationHotKey)

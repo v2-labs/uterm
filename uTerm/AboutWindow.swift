@@ -23,7 +23,10 @@ class AboutWindow: NSObject {
 
     // Create the window programmatically
     func createWindow() {
-        window = NSWindow(contentRect: NSMakeRect(100, 100, 200, 150),
+        let screenSize = NSScreen.main?.frame
+        let (windowSizeW, windowSizeH) = (CGFloat(200), CGFloat(150))
+        let (origX, origY) = ((screenSize!.maxX - windowSizeW) / 2, (screenSize!.maxY - windowSizeH) / 2)
+        window = NSWindow(contentRect: NSMakeRect(origX, origY, windowSizeW, windowSizeH),
                           styleMask: .borderless,
                           backing: .buffered,
                           defer: false)

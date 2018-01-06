@@ -22,6 +22,11 @@ class AppearanceViewController: NSViewController {
     // View's subviews controls (outlets)
     @IBOutlet weak var terminalType: NSPopUpButton!
     @IBOutlet weak var terminalInterpreter: NSPopUpButton!
+    @IBOutlet weak var terminalFont: NSButton!
+    @IBOutlet weak var fontPreview: NSTextField!
+    @IBOutlet weak var backColor: NSColorWell!
+    @IBOutlet weak var frontColor: NSColorWell!
+
 
     // MARK: - AppearanceViewController delegate methods
 
@@ -80,6 +85,12 @@ class AppearanceViewController: NSViewController {
             terminalInterpreter.selectItem(withTitle: termInterps[0])
         }
         print("terminalInterpreter PopupButton: \(terminalInterpreter.titleOfSelectedItem!)")
+        //
+        backColor.color = preferencesModel.colorBackground
+        frontColor.color = preferencesModel.colorForeground
+        //
+        let fontManager = NSFontManager.shared
+        
     }
 
     // MARK: - AppearanceViewController action methods
@@ -107,7 +118,7 @@ class AppearanceViewController: NSViewController {
      changes selection. It basically updates the proper userDefaults key through
      the singleton preferencesModel property.
      */
-    @IBAction func terminalInterpreter(_ sender: AnyObject) {
+    @IBAction func terminalInterpreter(_ sender: Any) {
         if let termInterp = sender as? NSPopUpButton {
             preferencesModel.terminalInterpreter = termInterp.titleOfSelectedItem!
             print("PopUpButton 2: \(termInterp.titleOfSelectedItem!)")
@@ -116,5 +127,28 @@ class AppearanceViewController: NSViewController {
         else {
             NSLog("")
         }
+    }
+
+    /**
+     */
+    @IBAction func changeTerminalFont(_ sender: Any) {
+        //
+        let fontPanel = NSFontPanel.shared
+        let fontManager = NSFontManager.shared
+        fontPanel.orderFront(self)
+        fontManager.target = self
+        preferencesModel.terminalFont = fontManager.selectedFont!
+    }
+
+
+    @IBAction func changeBackgroundColor(_ sender: Any) {
+        //
+        preferencesModel.colorBackground = backColor.color
+    }
+
+
+    @IBAction func changeForegroundColor(_ sender: Any) {
+        //
+        preferencesModel.colorForeground = frontColor.color
     }
 }

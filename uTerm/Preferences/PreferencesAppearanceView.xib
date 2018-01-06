@@ -8,6 +8,9 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AppearanceViewController" customModule="uTerm" customModuleProvider="target">
             <connections>
+                <outlet property="backColor" destination="bgh-Yq-nuX" id="QrD-a3-Kaw"/>
+                <outlet property="frontColor" destination="OtA-cP-GXa" id="WQb-yG-kLa"/>
+                <outlet property="terminalFont" destination="dfs-dK-0sR" id="35A-RO-ANz"/>
                 <outlet property="terminalInterpreter" destination="Sut-y4-663" id="DdL-LY-6VO"/>
                 <outlet property="terminalType" destination="IfK-T1-VQ5" id="OiL-vd-ap7"/>
                 <outlet property="view" destination="c22-O7-iKe" id="0O4-Qw-Pc8"/>
@@ -50,7 +53,7 @@
                     <rect key="frame" x="149" y="295" width="245" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Select the kind of terminal for uTerm to use. Refer to the available types on your system." id="dP5-Is-ZwF">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -86,7 +89,7 @@
                     <rect key="frame" x="149" y="213" width="245" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Select the preferred shell interpreter from the list of installed ones." id="iNH-Ai-Bpr">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -107,6 +110,9 @@
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                         <font key="font" metaFont="cellTitle"/>
                     </buttonCell>
+                    <connections>
+                        <action selector="changeTerminalFont:" target="-2" id="AW6-sG-USo"/>
+                    </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhj-f4-ILr">
                     <rect key="frame" x="226" y="175" width="85" height="17"/>
@@ -121,7 +127,7 @@
                     <rect key="frame" x="151" y="137" width="243" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Select the typeset font to use inside the your terminal panel." id="ZaA-DZ-HMx">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
@@ -139,6 +145,9 @@
                     <rect key="frame" x="151" y="89" width="44" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" name="textColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <action selector="changeBackgroundColor:" target="-2" id="cg1-Ym-Mcs"/>
+                    </connections>
                 </colorWell>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CKJ-WB-LLC">
                     <rect key="frame" x="199" y="92" width="77" height="17"/>
@@ -153,6 +162,9 @@
                     <rect key="frame" x="151" y="58" width="44" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    <connections>
+                        <action selector="changeForegroundColor:" target="-2" id="kky-oq-S9m"/>
+                    </connections>
                 </colorWell>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Ef-yZ-LgK">
                     <rect key="frame" x="199" y="61" width="75" height="17"/>
@@ -167,7 +179,7 @@
                     <rect key="frame" x="151" y="20" width="243" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" sendsActionOnEndEditing="YES" title="Select the colors for the terminal panel background and foreground text." id="7cZ-5b-1q8">
-                        <font key="font" metaFont="system" size="11"/>
+                        <font key="font" metaFont="smallSystem"/>
                         <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
