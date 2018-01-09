@@ -36,25 +36,18 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
     // Name of properties' view control active
     var currentView = ""
     // Set the active current view controller
-    var currentViewController:NSViewController!
+    var currentViewController: NSViewController!
 
     // MARK: - PreferencesController
 
     /**
         Implement this method to handle any initialization after your window controller's window
         has been loaded from its nib file.
-    */
+     */
     override func windowDidLoad() {
         super.windowDidLoad()
-        // Create the preferences toolbar element for tabview control
-        let toolbar = NSToolbar(identifier: NSToolbar.Identifier(rawValue: "preferencesToolbar"))
-        toolbar.displayMode = .iconAndLabel
-        toolbar.sizeMode = .regular
-        toolbar.allowsUserCustomization = false
-        toolbar.autosavesConfiguration = false
-        toolbar.delegate = self
         // Attach the created toolbar to the preferences NSPanel
-        self.window!.toolbar = toolbar
+        self.window!.toolbar = setupWindowToolbar(toolbarName: "preferencesToolbar")
         // Check the need for a default setup
         if self.currentView.isEmpty {
             self.loadView(viewIdentifier: self.defaultView, withAnimation: false)
@@ -62,12 +55,23 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         }
     }
 
-    // Managament of preference NSPanel views
-    @IBAction func viewSelected(sender: NSToolbarItem) {
-        self.loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
+    // MARK: - PreferencesController private methods
+
+    /**
+     */
+    fileprivate func setupWindowToolbar(toolbarName: String) -> NSToolbar {
+        // Create the preferences toolbar element for tabview control
+        let toolbar = NSToolbar(identifier: NSToolbar.Identifier(rawValue: toolbarName))
+        toolbar.displayMode = .iconAndLabel
+        toolbar.sizeMode = .regular
+        toolbar.allowsUserCustomization = false
+        toolbar.autosavesConfiguration = false
+        toolbar.delegate = self
+
+        return toolbar
     }
 
-    func loadView(viewIdentifier: String, withAnimation shouldAnimate:Bool) {
+    fileprivate func loadView(viewIdentifier: String, withAnimation shouldAnimate:Bool) {
         if self.currentView == viewIdentifier {
             return
         }
@@ -101,6 +105,13 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         self.window!.title = self.currentView
         self.window!.setFrame(newFrame, display: true, animate: shouldAnimate)
         self.window!.contentView = newView
+    }
+
+    // MARK: - PreferencesController action methods
+
+    // Managament of preference NSPanel views
+    @IBAction func viewSelected(sender: NSToolbarItem) {
+        self.loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
     }
 
     // MARK: - NSToolbarDelegate

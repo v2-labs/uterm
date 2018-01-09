@@ -17,7 +17,7 @@ class AboutWindow: NSObject {
     func readResourceFile() {
         if let path = Bundle.main.path(forResource: "Info", ofType: "plist") {
             infoPlistContent = NSDictionary(contentsOfFile: path)
-            //print("Dictionary: \(infoPlistContent)")
+            print("Dictionary: \(String(describing: infoPlistContent))")
         }
     }
 

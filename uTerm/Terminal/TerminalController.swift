@@ -14,6 +14,7 @@ class TerminalController: NSWindowController {
         return NSNib.Name("TerminalPanel")
     }
 
+    // MARK: - .
 
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -24,9 +25,8 @@ class TerminalController: NSWindowController {
         // Activate and
     }
 
-
-
     // MARK: - TerminalController private methods
+
     fileprivate func slideWindowDown(to: CGPoint, size: CGPoint, animated: Bool) {
         //
     }
