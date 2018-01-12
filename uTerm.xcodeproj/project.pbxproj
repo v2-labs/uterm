@@ -7,16 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */; };
+		CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */; };
+		CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD71FE8B9FB00281E23 /* TerminalController.swift */; };
+		CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */; };
 		CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */; };
 		CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB671DC258CC00EC9007 /* Assets.xcassets */; };
 		CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF0CAB691DC258CC00EC9007 /* MainMenu.xib */; };
 		CF0CAB761DC258CC00EC9007 /* uTermTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB751DC258CC00EC9007 /* uTermTests.swift */; };
 		CF0CAB811DC258CC00EC9007 /* uTermUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */; };
+		CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */; };
+		CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */; };
+		CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */; };
 		CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5D1DC4168800EC9007 /* AppKit.framework */; };
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
+		CF458F2B1FF58E4800281E23 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF458F2A1FF58E4800281E23 /* AboutWindow.swift */; };
+		CF45CECE1FE160A800281E23 /* PreferencesGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */; };
+		CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */; };
+		CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */; };
 		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
+		CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E41FA918EF00C5038F /* PreferencesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +49,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAdvancedView.xib; sourceTree = "<group>"; };
+		CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedViewController.swift; sourceTree = "<group>"; };
+		CF014DD71FE8B9FB00281E23 /* TerminalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalController.swift; sourceTree = "<group>"; };
+		CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TerminalPanel.xib; sourceTree = "<group>"; };
 		CF0CAB621DC258CC00EC9007 /* uTerm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = uTerm.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CF0CAB671DC258CC00EC9007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,12 +64,20 @@
 		CF0CAB7C1DC258CC00EC9007 /* uTermUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = uTermUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF0CAB801DC258CC00EC9007 /* uTermUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uTermUITests.swift; sourceTree = "<group>"; };
 		CF0CAB821DC258CC00EC9007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
+		CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
+		CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
 		CF2E5A5D1DC4168800EC9007 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
+		CF458F2A1FF58E4800281E23 /* AboutWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
+		CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesGeneralView.xib; sourceTree = "<group>"; };
+		CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAppearanceView.xib; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
+		CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesPanel.xib; sourceTree = "<group>"; };
 		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
+		CFDF62E41FA918EF00C5038F /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +108,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CF014DD61FE8B93500281E23 /* Terminal */ = {
+			isa = PBXGroup;
+			children = (
+				CF014DD71FE8B9FB00281E23 /* TerminalController.swift */,
+				CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */,
+			);
+			path = Terminal;
+			sourceTree = "<group>";
+		};
 		CF0CAB591DC258CC00EC9007 = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +141,13 @@
 		CF0CAB641DC258CC00EC9007 /* uTerm */ = {
 			isa = PBXGroup;
 			children = (
+				CF014DD61FE8B93500281E23 /* Terminal */,
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
+				CF458F2A1FF58E4800281E23 /* AboutWindow.swift */,
+				CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
+				CFDF62E61FA9190C00C5038F /* Preferences */,
 				CFCC8F201E9E885800EC9007 /* RunManager.swift */,
 				CF0CAB671DC258CC00EC9007 /* Assets.xcassets */,
 				CF0CAB691DC258CC00EC9007 /* MainMenu.xib */,
@@ -153,6 +190,21 @@
 				CF938C4C1DC9123200EC9007 /* set_build_number.sh */,
 			);
 			path = BuildScripts;
+			sourceTree = "<group>";
+		};
+		CFDF62E61FA9190C00C5038F /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				CFDF62E41FA918EF00C5038F /* PreferencesController.swift */,
+				CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */,
+				CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */,
+				CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */,
+				CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */,
+				CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */,
+				CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */,
+				CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */,
+			);
+			path = Preferences;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +321,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF45CECE1FE160A800281E23 /* PreferencesGeneralView.xib in Resources */,
+				CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */,
 				CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */,
 				CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */,
+				CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */,
+				CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */,
+				CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,9 +369,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */,
+				CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */,
+				CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */,
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
+				CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */,
+				CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */,
+				CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
+				CF458F2B1FF58E4800281E23 /* AboutWindow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +453,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -408,7 +472,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -446,7 +510,7 @@
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -459,7 +523,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -471,13 +535,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KNERK97WK8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uTerm";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};
@@ -487,13 +554,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = KNERK97WK8;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uTerm";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
 			};

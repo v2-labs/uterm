@@ -9,20 +9,52 @@
 import Cocoa
 
 class StatusMenuController: NSObject {
-
+    //
+    private var about: AboutWindow!
+    private var preferences: PreferencesController!
+    private var terminalPanel: TerminalController!
+    let appStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    //
     @IBOutlet weak var statusMenu: NSMenu!
 
-    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+    // MARK: - StatusMenuController delegate methods
 
-
+    /**
+     */
     override func awakeFromNib() {
-        let icon = NSImage(named: NSImage.Name(rawValue: "statusIcon"))
-        icon?.isTemplate = true
-        statusItem.menu = statusMenu
-        statusItem.image = icon
+        appStatusItem.menu = statusMenu
+        if let menuIcon = NSImage(named: NSImage.Name(rawValue: "statusIcon")) {
+            menuIcon.isTemplate = true
+            appStatusItem.image = menuIcon
+        }
+        else {
+            appStatusItem.title = "uTerm"
+        }
     }
 
+    // MARK: - StatusMenuController action methods
+
+    /**
+     */
+    @IBAction func openAbout(_ sender: NSMenuItem) {
+        //
+    }
+    /**
+     */
+    @IBAction func openPreferences(_ sender: NSMenuItem) {
+        if preferences == nil {
+            preferences = PreferencesController()
+        }
+        preferences.showWindow(self)
+        // Make sure to have it pushed to front
+        NSApp.activate(ignoringOtherApps: true)
+        // If in another space, bring it to you
+        preferences.window!.collectionBehavior = .moveToActiveSpace
+    }
+
+    /**
+     */
     @IBAction func quitClicked(_ sender: NSMenuItem) {
-        NSApplication.shared.terminate(self)
+        NSApp.terminate(self)
     }
 }

@@ -20,3 +20,5 @@ for plist in "${target_plist}" "${dsym_plist}"; do
         /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${git_release_version#*v}" "${plist}"
     fi
 done
+
+/usr/libexec/PlistBuddy -c "Add :LSUIElement bool true" "${plist}"
