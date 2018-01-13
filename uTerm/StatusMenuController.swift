@@ -10,7 +10,7 @@ import Cocoa
 
 class StatusMenuController: NSObject {
     //
-    private var about: AboutWindow!
+    private var about: AboutPanel!
     private var preferences: PreferencesController!
     private var terminalPanel: TerminalController!
     let appStatusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
@@ -37,7 +37,15 @@ class StatusMenuController: NSObject {
     /**
      */
     @IBAction func openAbout(_ sender: NSMenuItem) {
+        if about == nil {
+            about = AboutPanel()
+        }
         //
+        about.createWindow()
+        // Make sure to have it pushed to front
+        NSApp.activate(ignoringOtherApps: true)
+        // If in another space, bring it to you
+        about.window!.collectionBehavior = .moveToActiveSpace
     }
     /**
      */

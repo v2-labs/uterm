@@ -23,7 +23,7 @@
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
-		CF458F2B1FF58E4800281E23 /* AboutWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF458F2A1FF58E4800281E23 /* AboutWindow.swift */; };
+		CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF458F2A1FF58E4800281E23 /* AboutPanel.swift */; };
 		CF45CECE1FE160A800281E23 /* PreferencesGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */; };
 		CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */; };
 		CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */; };
@@ -71,7 +71,7 @@
 		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
-		CF458F2A1FF58E4800281E23 /* AboutWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutWindow.swift; sourceTree = "<group>"; };
+		CF458F2A1FF58E4800281E23 /* AboutPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPanel.swift; sourceTree = "<group>"; };
 		CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesGeneralView.xib; sourceTree = "<group>"; };
 		CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAppearanceView.xib; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 				CF014DD61FE8B93500281E23 /* Terminal */,
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
-				CF458F2A1FF58E4800281E23 /* AboutWindow.swift */,
+				CF458F2A1FF58E4800281E23 /* AboutPanel.swift */,
 				CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
 				CFDF62E61FA9190C00C5038F /* Preferences */,
@@ -378,7 +378,7 @@
 				CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
-				CF458F2B1FF58E4800281E23 /* AboutWindow.swift in Sources */,
+				CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
