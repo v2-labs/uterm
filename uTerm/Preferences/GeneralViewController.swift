@@ -17,7 +17,8 @@ class GeneralViewController: NSViewController {
     private let preferencesModel = PreferencesModel.shared
     // Outlets for the view controls.
     @IBOutlet weak var launchAtLogin: NSButton!
-    @IBOutlet weak var activationHotkey: NSTextField!
+    // @IBOutlet weak var activationHotkey: MASShortcutView!
+    @IBOutlet weak var activationHotkey: NSTextView!
     @IBOutlet weak var activationMode: NSPopUpButton!
     // Values for some view controls (should be defined somewhere else?).
     let activationModes = ["Screen", "Window"]
@@ -104,8 +105,8 @@ class GeneralViewController: NSViewController {
             NSControl.StateValue.on : NSControl.StateValue.off
         print("launchAtLogin checkbox: \(launchAtLogin.state)")
         // .
-        activationHotkey.stringValue = preferencesModel.activationHotKey
-        print("activationHotkey string: \(activationHotkey.stringValue)")
+        //activationHotkey.stringValue = preferencesModel.activationHotKey
+        //print("activationHotkey string: \(activationHotkey.stringValue)")
         // .
         if activationModes.contains(preferencesModel.kindOfActivation) {
             activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)

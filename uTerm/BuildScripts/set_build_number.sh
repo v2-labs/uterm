@@ -16,9 +16,10 @@ dsym_plist="${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plis
 
 for plist in "${target_plist}" "${dsym_plist}"; do
     if [[ -f "${plist}" ]]; then
+        # Set the found version tag and commit id from git
         /usr/libexec/PlistBuddy -c "Set :CFBundleVersion ${commit_hash}" "${plist}"
         /usr/libexec/PlistBuddy -c "Set :CFBundleShortVersionString ${git_release_version#*v}" "${plist}"
+        # Set the kind of application to user agent (no Dock icon)
+        /usr/libexec/PlistBuddy -c "Add :LSUIElement bool true" "${plist}"
     fi
 done
-
-/usr/libexec/PlistBuddy -c "Add :LSUIElement bool true" "${plist}"

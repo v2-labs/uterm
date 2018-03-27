@@ -89,7 +89,7 @@ class AppearanceViewController: NSViewController {
         backColor.color = preferencesModel.colorBackground
         frontColor.color = preferencesModel.colorForeground
         //
-        let fontManager = NSFontManager.shared
+        //let fontManager = NSFontManager.shared
         
     }
 

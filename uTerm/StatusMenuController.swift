@@ -40,7 +40,7 @@ class StatusMenuController: NSObject {
         if about == nil {
             about = AboutPanel()
         }
-        //
+        // Create the about panel
         about.createWindow()
         // Make sure to have it pushed to front
         NSApp.activate(ignoringOtherApps: true)

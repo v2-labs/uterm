@@ -277,7 +277,7 @@
 					CF0CAB611DC258CC00EC9007 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = KNERK97WK8;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					CF0CAB701DC258CC00EC9007 = {
@@ -541,7 +541,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -560,7 +560,7 @@
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = uTerm/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				PRODUCT_BUNDLE_IDENTIFIER = "br.com.v2-lab.apps.uterm";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

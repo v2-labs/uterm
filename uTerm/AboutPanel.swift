@@ -28,6 +28,7 @@ class AboutPanel: NSObject {
                 appInfo["commitID"] = appCommitID
                 appInfo["copyright"] = appCopyright
                 appInfo["macOSMinVer"] = appMinSystem
+                appInfo["developmentText"] = ""
 
                 print("Application name: \(appInfo["name"]!), commit: \(appInfo["commitID"]!), version: \(appInfo["version"]!), copyright: \(appInfo["copyright"]!), minimum macOS required: \(appInfo["macOSMinVer"]!)")
                 print("Dictionary: \(String(describing: infoPlistContent))")
@@ -40,13 +41,19 @@ class AboutPanel: NSObject {
         let screenSize = NSScreen.main?.frame
         let (windowSizeW, windowSizeH) = (CGFloat(250), CGFloat(180))
         let (origX, origY) = ((screenSize!.maxX - windowSizeW) / 2, (screenSize!.maxY - windowSizeH) / 2)
-        window = NSPanel(contentRect: NSMakeRect(origX, origY, windowSizeW, windowSizeH),
-                         styleMask: [.titled, .closable],
-                         backing: .buffered,
-                         defer: false)
+        if window == nil {
+            window = NSPanel(contentRect: NSMakeRect(origX, origY, windowSizeW, windowSizeH),
+                             styleMask: [.titled, .closable, .fullSizeContentView],
+                             backing: .buffered,
+                             defer: false)
+            window.titlebarAppearsTransparent = true
+            window.titleVisibility = .hidden
+            //window.contentView?.wantsLayer = true
+            //window.contentView?.layer?.contents = NSImage()
+        }
         // Showing the window
         window.makeKeyAndOrderFront(self)
-        NSApp.activate(ignoringOtherApps: true)
+        //NSApp.activate(ignoringOtherApps: true)
 
         readInfoData()
 

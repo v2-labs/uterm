@@ -30,10 +30,10 @@
                         <action selector="loginMode:" target="-2" id="Uey-eM-tBk"/>
                     </connections>
                 </button>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adr-MI-Ncm">
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" setsMaxLayoutWidthAtFirstLayout="YES" translatesAutoresizingMaskIntoConstraints="NO" id="adr-MI-Ncm">
                     <rect key="frame" x="18" y="276" width="423" height="28"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" id="sZ0-og-GNx">
+                    <textFieldCell key="cell" sendsActionOnEndEditing="YES" id="sZ0-og-GNx">
                         <font key="font" metaFont="smallSystem"/>
                         <string key="title">When invoked in login mode, the shell executes startup scripts like ~/.profile.
 This is necessary if you whish to use certain third party command line utilities.</string>
@@ -44,7 +44,7 @@ This is necessary if you whish to use certain third party command line utilities
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Tw-Pg-54x">
                     <rect key="frame" x="18" y="238" width="142" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Environment variables:" id="mFo-7V-ucl">
+                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Environment variables:" id="mFo-7V-ucl">
                         <font key="font" metaFont="system"/>
                         <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -99,7 +99,7 @@ This is necessary if you whish to use certain third party command line utilities
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="Lwk-cC-12B">
-                        <rect key="frame" x="224" y="17" width="15" height="102"/>
+                        <rect key="frame" x="-15" y="23" width="16" height="0.0"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                     <tableHeaderView key="headerView" id="JFW-QH-M0c">
