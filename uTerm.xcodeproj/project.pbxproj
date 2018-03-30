@@ -19,6 +19,7 @@
 		CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */; };
 		CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */; };
 		CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */; };
+		CF20FB1B206E257C00281E23 /* AlphaColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */; };
 		CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5D1DC4168800EC9007 /* AppKit.framework */; };
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
@@ -71,6 +72,7 @@
 		CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralViewController.swift; sourceTree = "<group>"; };
 		CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
 		CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
+		CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaColorWell.swift; sourceTree = "<group>"; };
 		CF2E5A5D1DC4168800EC9007 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -156,6 +158,7 @@
 		CF0CAB641DC258CC00EC9007 /* uTerm */ = {
 			isa = PBXGroup;
 			children = (
+				CF20FB19206E251400281E23 /* Utilities */,
 				CF014DD61FE8B93500281E23 /* Terminal */,
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
@@ -187,6 +190,14 @@
 				CF0CAB821DC258CC00EC9007 /* Info.plist */,
 			);
 			path = uTermUITests;
+			sourceTree = "<group>";
+		};
+		CF20FB19206E251400281E23 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 		CF2E5A5C1DC4168800EC9007 /* Frameworks */ = {
@@ -446,6 +457,7 @@
 				CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */,
 				CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */,
 				CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */,
+				CF20FB1B206E257C00281E23 /* AlphaColorWell.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
 				CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */,

@@ -118,7 +118,7 @@ class PreferencesModel: NSObject {
                     return backColor
                 }
             }
-            return NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70)
+            return defaultColorBackground
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
@@ -133,7 +133,7 @@ class PreferencesModel: NSObject {
                     return foreColor
                 }
             }
-            return NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
+            return defaultColorForeground
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)

@@ -141,7 +141,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-Yq-nuX">
+                <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgh-Yq-nuX" customClass="AlphaColorWell" customModule="uTerm" customModuleProvider="target">
                     <rect key="frame" x="151" y="89" width="44" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" name="textColor" catalog="System" colorSpace="catalog"/>
@@ -158,7 +158,7 @@
                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OtA-cP-GXa">
+                <colorWell fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OtA-cP-GXa" customClass="AlphaColorWell" customModule="uTerm" customModuleProvider="target">
                     <rect key="frame" x="151" y="58" width="44" height="23"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <color key="color" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>

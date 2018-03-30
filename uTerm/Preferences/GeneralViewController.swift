@@ -125,7 +125,7 @@ class GeneralViewController: NSViewController {
             activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)
         }
         else {
-            activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)
+            activationMode.selectItem(withTitle: activationModes[0])
         }
         #if DEBUG
             print("launchAtLogin checkbox: \(launchAtLogin.state)")

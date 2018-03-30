@@ -25,8 +25,8 @@ class AppearanceViewController: NSViewController {
     @IBOutlet weak var terminalInterpreter: NSPopUpButton!
     @IBOutlet weak var terminalFont: NSButton!
     @IBOutlet weak var fontPreview: NSTextField!
-    @IBOutlet weak var backColor: NSColorWell!
-    @IBOutlet weak var frontColor: NSColorWell!
+    @IBOutlet weak var backColor: AlphaColorWell!
+    @IBOutlet weak var frontColor: AlphaColorWell!
 
 
     // MARK: - AppearanceViewController
@@ -87,16 +87,16 @@ class AppearanceViewController: NSViewController {
             terminalInterpreter.selectItem(withTitle: termInterps[0])
         }
         //
+        //let fontManager = NSFontManager.shared
+        //
         backColor.color = preferencesModel.colorBackground
         frontColor.color = preferencesModel.colorForeground
-        //
-        //let fontManager = NSFontManager.shared
         #if DEBUG
             print("terminalType PopupButton: \(terminalType.titleOfSelectedItem!)")
             print("terminalInterpreter PopupButton: \(terminalInterpreter.titleOfSelectedItem!)")
+            //print("fontManager selection: \(fontManager.)")
             print("backgroundColor selection: \(backColor.color)")
             print("foregroundColor selection: \(frontColor.color)")
-            //print("fontManager selection: \(fontManager.)")
         #endif
     }
 
