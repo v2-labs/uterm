@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */; };
 		CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */; };
 		CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF014DD71FE8B9FB00281E23 /* TerminalController.swift */; };
 		CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */; };
@@ -20,14 +19,16 @@
 		CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */; };
 		CF1CAF551FBA7668003CC620 /* AppearanceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */; };
 		CF20FB1B206E257C00281E23 /* AlphaColorWell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */; };
+		CF20FB1D206E7E2800281E23 /* AppInfoCollect.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF20FB1C206E7E2800281E23 /* AppInfoCollect.swift */; };
+		CF20FB5E206EB7FA00281E23 /* PreferencesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF20FB60206EB7FA00281E23 /* PreferencesPanel.xib */; };
+		CF20FB61206EB80400281E23 /* PreferencesGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF20FB63206EB80400281E23 /* PreferencesGeneralView.xib */; };
+		CF20FB64206EB80A00281E23 /* PreferencesAppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF20FB66206EB80A00281E23 /* PreferencesAppearanceView.xib */; };
+		CF20FB67206EB81500281E23 /* PreferencesAdvancedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF20FB69206EB81500281E23 /* PreferencesAdvancedView.xib */; };
 		CF2E5A601DC4168800EC9007 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5D1DC4168800EC9007 /* AppKit.framework */; };
 		CF2E5A611DC4168800EC9007 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */; };
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
 		CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF458F2A1FF58E4800281E23 /* AboutPanel.swift */; };
-		CF45CECE1FE160A800281E23 /* PreferencesGeneralView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */; };
-		CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */; };
-		CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */ = {isa = PBXBuildFile; fileRef = CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */; };
 		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
 		CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E41FA918EF00C5038F /* PreferencesController.swift */; };
 		E6270E0C6D33CA6463741E5B /* Pods_uTerm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2582237ADEA249DD5C3E4443 /* Pods_uTerm.framework */; };
@@ -54,7 +55,6 @@
 		0600F3515B7554890950890D /* Pods-uTerm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uTerm.release.xcconfig"; path = "Pods/Target Support Files/Pods-uTerm/Pods-uTerm.release.xcconfig"; sourceTree = "<group>"; };
 		1A8FA348F0463FE8CD71DE87 /* Pods-uTerm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uTerm.debug.xcconfig"; path = "Pods/Target Support Files/Pods-uTerm/Pods-uTerm.debug.xcconfig"; sourceTree = "<group>"; };
 		2582237ADEA249DD5C3E4443 /* Pods_uTerm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uTerm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAdvancedView.xib; sourceTree = "<group>"; };
 		CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvancedViewController.swift; sourceTree = "<group>"; };
 		CF014DD71FE8B9FB00281E23 /* TerminalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerminalController.swift; sourceTree = "<group>"; };
 		CF014DD91FE8BAA600281E23 /* TerminalPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TerminalPanel.xib; sourceTree = "<group>"; };
@@ -73,15 +73,17 @@
 		CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
 		CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceViewController.swift; sourceTree = "<group>"; };
 		CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlphaColorWell.swift; sourceTree = "<group>"; };
+		CF20FB1C206E7E2800281E23 /* AppInfoCollect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoCollect.swift; sourceTree = "<group>"; };
+		CF20FB5F206EB7FA00281E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesPanel.xib; sourceTree = "<group>"; };
+		CF20FB62206EB80400281E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesGeneralView.xib; sourceTree = "<group>"; };
+		CF20FB65206EB80A00281E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesAppearanceView.xib; sourceTree = "<group>"; };
+		CF20FB68206EB81500281E23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/PreferencesAdvancedView.xib; sourceTree = "<group>"; };
 		CF2E5A5D1DC4168800EC9007 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		CF2E5A5E1DC4168800EC9007 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CF458F2A1FF58E4800281E23 /* AboutPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPanel.swift; sourceTree = "<group>"; };
-		CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesGeneralView.xib; sourceTree = "<group>"; };
-		CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesAppearanceView.xib; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
-		CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesPanel.xib; sourceTree = "<group>"; };
 		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
 		CFDF62E41FA918EF00C5038F /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 			isa = PBXGroup;
 			children = (
 				CF20FB1A206E257C00281E23 /* AlphaColorWell.swift */,
+				CF20FB1C206E7E2800281E23 /* AppInfoCollect.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -226,10 +229,10 @@
 				CF1CAF4E1FBA3045003CC620 /* GeneralViewController.swift */,
 				CF1CAF541FBA7668003CC620 /* AppearanceViewController.swift */,
 				CF014DD41FE2E85A00281E23 /* AdvancedViewController.swift */,
-				CFA857691FDB91DD00281E23 /* PreferencesPanel.xib */,
-				CF45CECD1FE160A800281E23 /* PreferencesGeneralView.xib */,
-				CF45CECF1FE16E9200281E23 /* PreferencesAppearanceView.xib */,
-				CF014DD21FE2E81800281E23 /* PreferencesAdvancedView.xib */,
+				CF20FB60206EB7FA00281E23 /* PreferencesPanel.xib */,
+				CF20FB63206EB80400281E23 /* PreferencesGeneralView.xib */,
+				CF20FB66206EB80A00281E23 /* PreferencesAppearanceView.xib */,
+				CF20FB69206EB81500281E23 /* PreferencesAdvancedView.xib */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -351,13 +354,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF45CECE1FE160A800281E23 /* PreferencesGeneralView.xib in Resources */,
-				CF014DD31FE2E81800281E23 /* PreferencesAdvancedView.xib in Resources */,
+				CF20FB61206EB80400281E23 /* PreferencesGeneralView.xib in Resources */,
+				CF20FB67206EB81500281E23 /* PreferencesAdvancedView.xib in Resources */,
 				CF0CAB681DC258CC00EC9007 /* Assets.xcassets in Resources */,
 				CF0CAB6B1DC258CC00EC9007 /* MainMenu.xib in Resources */,
 				CF014DDA1FE8BAA600281E23 /* TerminalPanel.xib in Resources */,
-				CFA8576A1FDB91DD00281E23 /* PreferencesPanel.xib in Resources */,
-				CF45CED01FE16E9200281E23 /* PreferencesAppearanceView.xib in Resources */,
+				CF20FB5E206EB7FA00281E23 /* PreferencesPanel.xib in Resources */,
+				CF20FB64206EB80A00281E23 /* PreferencesAppearanceView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +463,7 @@
 				CF20FB1B206E257C00281E23 /* AlphaColorWell.swift in Sources */,
 				CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */,
 				CF0CAB661DC258CC00EC9007 /* AppDelegate.swift in Sources */,
+				CF20FB1D206E7E2800281E23 /* AppInfoCollect.swift in Sources */,
 				CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -502,6 +506,38 @@
 				CF0CAB6A1DC258CC00EC9007 /* Base */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		CF20FB60206EB7FA00281E23 /* PreferencesPanel.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20FB5F206EB7FA00281E23 /* Base */,
+			);
+			name = PreferencesPanel.xib;
+			sourceTree = "<group>";
+		};
+		CF20FB63206EB80400281E23 /* PreferencesGeneralView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20FB62206EB80400281E23 /* Base */,
+			);
+			name = PreferencesGeneralView.xib;
+			sourceTree = "<group>";
+		};
+		CF20FB66206EB80A00281E23 /* PreferencesAppearanceView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20FB65206EB80A00281E23 /* Base */,
+			);
+			name = PreferencesAppearanceView.xib;
+			sourceTree = "<group>";
+		};
+		CF20FB69206EB81500281E23 /* PreferencesAdvancedView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CF20FB68206EB81500281E23 /* Base */,
+			);
+			name = PreferencesAdvancedView.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
