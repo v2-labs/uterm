@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASShortcut
 
 class GeneralViewController: NSViewController {
     // Tie the controller to its XIB file.
@@ -17,8 +18,7 @@ class GeneralViewController: NSViewController {
     private let preferencesModel = PreferencesModel.shared
     // Outlets for the view controls.
     @IBOutlet weak var launchAtLogin: NSButton!
-    // @IBOutlet weak var activationHotkey: MASShortcutView!
-    @IBOutlet weak var activationHotkey: NSTextView!
+    @IBOutlet weak var activationHotkey: MASShortcutView!
     @IBOutlet weak var activationMode: NSPopUpButton!
     // Values for some view controls (should be defined somewhere else?).
     let activationModes = ["Screen", "Window"]
@@ -64,9 +64,9 @@ class GeneralViewController: NSViewController {
     /**
      */
     @IBAction func activationHotkey(_ sender: Any) {
-        if let activationHotkeyText = sender as? NSTextField {
-            preferencesModel.activationHotKey = activationHotkeyText.stringValue
-            print("activationHotkey control: \(activationHotkeyText.stringValue)")
+        if let activationHotkey = sender as? MASShortcutView {
+            preferencesModel.activationHotKey = activationHotkey.shortcutValue
+            print("activationHotkey control: \(activationHotkey.shortcutValue)")
             print("activationHotkey preference: \(preferencesModel.activationHotKey)")
         }
         else {
@@ -101,13 +101,14 @@ class GeneralViewController: NSViewController {
      */
     fileprivate func updateViewElements() {
         // Update the view controls contents
+        // LaunchAtLogin
         launchAtLogin.state = preferencesModel.launchAtLogin ?
             NSControl.StateValue.on : NSControl.StateValue.off
         print("launchAtLogin checkbox: \(launchAtLogin.state)")
-        // .
-        //activationHotkey.stringValue = preferencesModel.activationHotKey
-        //print("activationHotkey string: \(activationHotkey.stringValue)")
-        // .
+        // ActivationHotKey
+        activationHotkey.shortcutValue = preferencesModel.activationHotKey
+        print("activationHotkey value: \(activationHotkey.shortcutValue)")
+        // KindOfActivation
         if activationModes.contains(preferencesModel.kindOfActivation) {
             activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)
         }

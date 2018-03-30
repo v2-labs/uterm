@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import MASShortcut
 
 class PreferencesModel {
     // Single shared instance (Singleton)
@@ -38,6 +39,7 @@ class PreferencesModel {
                                                                   ["Name": "TERM_PROGRAM",
                                                                    "Value": "uTerm"]
     ]
+    private let defaultShortcut: MASShortcut!
     private let defaultTerminalFont: NSFont = NSFont.userFixedPitchFont(ofSize: CGFloat(0.0))!
     private let defaultColorBackground: NSColor = NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70)
     private let defaultColorForeground: NSColor = NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
@@ -52,12 +54,18 @@ class PreferencesModel {
         }
     }
 
-    var activationHotKey: String {
+    var activationHotKey: MASShortcut {
         get {
-            return userDefaults.string(forKey: Keys.ActivationHotKey)!
+            if let data = userDefaults.object(forKey: Keys.ActivationHotKey) as? NSData {
+                if let shortcut = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? MASShortcut {
+                    return shortcut
+                }
+            }
+            return defaultShortcut
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.ActivationHotKey)
+            let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
+            userDefaults.set(data, forKey: Keys.ActivationHotKey)
         }
     }
 
@@ -171,6 +179,10 @@ class PreferencesModel {
 
     // Private initializer
     private init() {
+        // Set the default shortcut at initialization time
+        let keyModifier: NSEvent.ModifierFlags = .shift
+        defaultShortcut = MASShortcut.init(keyCode: UInt(kVK_Space), modifierFlags: UInt(keyModifier.rawValue))
+        // Fill the default settings
         registerFactoryDefaults()
     }
 
@@ -178,7 +190,7 @@ class PreferencesModel {
     private func registerFactoryDefaults() {
         let factoryDefaults = [
                 Keys.LaunchAtLogin: NSNumber(value: false),
-                Keys.ActivationHotKey: "",
+                Keys.ActivationHotKey: NSKeyedArchiver.archivedData(withRootObject: defaultShortcut),
                 Keys.KindOfActivation: "Screen",
                 Keys.TerminalType: "dumb",
                 Keys.TerminalInterpreter: "/bin/bash",
