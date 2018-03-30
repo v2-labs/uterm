@@ -9,6 +9,7 @@
 import Cocoa
 
 class AppearanceViewController: NSViewController {
+    // MARK: - Properties
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
         return NSNib.Name("PreferencesAppearanceView")
@@ -28,14 +29,14 @@ class AppearanceViewController: NSViewController {
     @IBOutlet weak var frontColor: NSColorWell!
 
 
-    // MARK: - AppearanceViewController delegate methods
+    // MARK: - AppearanceViewController
 
     /**
-     Description:
-     This delegate method is called when the view is created, so only one
-     execution. This makes it really usefull for initialization stuff.
-     I put here all view's control's initializations, so they were setup and
-     ready for configuration later when viewed.
+     * Description:
+     *   This delegate method is called when the view is created, so only one
+     *   execution. This makes it really usefull for initialization stuff.
+     *   I put here all view's control's initializations, so they were setup and
+     *   ready for configuration later when viewed.
     */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,11 +44,11 @@ class AppearanceViewController: NSViewController {
     }
 
     /**
-     Description:
-     This delegate method is called every time the view is about to appear to
-     the user. This makes it a nice point for update content prior to display.
-     I put here all the view's control's update settings, so they are up-to-date
-     for display.
+     * Description:
+     *   This delegate method is called every time the view is about to appear
+     *   to the user. This makes it a nice point for update content prior to
+     *   display. I put here all the view's control's update settings, so they
+     *   are up-to-date for display.
     */
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -57,6 +58,7 @@ class AppearanceViewController: NSViewController {
     // MARK: - AppearanceViewController private methods
 
     /**
+     *
      */
     fileprivate func setupViewElements() {
         // Setup the PopUpButtons
@@ -67,6 +69,7 @@ class AppearanceViewController: NSViewController {
     }
 
     /**
+     *
      */
     fileprivate func updateViewElements() {
         // Update the PopUpButtons status and values
@@ -76,7 +79,6 @@ class AppearanceViewController: NSViewController {
         else {
             terminalType.selectItem(withTitle: termTypes[0])
         }
-        print("terminalType PopupButton: \(terminalType.titleOfSelectedItem!)")
         //
         if termInterps.contains(preferencesModel.terminalInterpreter) {
             terminalInterpreter.selectItem(withTitle: preferencesModel.terminalInterpreter)
@@ -84,28 +86,35 @@ class AppearanceViewController: NSViewController {
         else {
             terminalInterpreter.selectItem(withTitle: termInterps[0])
         }
-        print("terminalInterpreter PopupButton: \(terminalInterpreter.titleOfSelectedItem!)")
         //
         backColor.color = preferencesModel.colorBackground
         frontColor.color = preferencesModel.colorForeground
         //
         //let fontManager = NSFontManager.shared
-        
+        #if DEBUG
+            print("terminalType PopupButton: \(terminalType.titleOfSelectedItem!)")
+            print("terminalInterpreter PopupButton: \(terminalInterpreter.titleOfSelectedItem!)")
+            print("backgroundColor selection: \(backColor.color)")
+            print("foregroundColor selection: \(frontColor.color)")
+            //print("fontManager selection: \(fontManager.)")
+        #endif
     }
 
     // MARK: - AppearanceViewController action methods
 
     /**
-     Description:
-     This is the action to perform when the terminalType NSPopUpButtom changes
-     selection. It basically updates the proper userDefaults key through the
-     singleton preferencesModel property.
+     * Description:
+     *   This is the action to perform when the terminalType NSPopUpButtom
+     *   chages selection. It basically updates the proper userDefaults key
+     *   through the singleton preferencesModel property.
      */
     @IBAction func terminalType(_ sender: Any) {
         if let termType = sender as? NSPopUpButton {
             preferencesModel.terminalType = termType.titleOfSelectedItem!
-            print("PopUpButton 1: \(termType.titleOfSelectedItem!)")
-            print("Preferences: \(preferencesModel.terminalType)")
+            #if DEBUG
+                print("PopUpButton 1: \(termType.titleOfSelectedItem!)")
+                print("Preferences: \(preferencesModel.terminalType)")
+            #endif
         }
         else {
             NSLog("")
@@ -113,16 +122,18 @@ class AppearanceViewController: NSViewController {
     }
 
     /**
-     Description:
-     This is the action to perform when the terminalInterpreter NSPopUpButtom
-     changes selection. It basically updates the proper userDefaults key through
-     the singleton preferencesModel property.
+     * Description:
+     *   This is the action to perform when the terminalInterpreter NSPopUpButtom
+     *   changes selection. It basically updates the proper userDefaults key through
+     *   the singleton preferencesModel property.
      */
     @IBAction func terminalInterpreter(_ sender: Any) {
         if let termInterp = sender as? NSPopUpButton {
             preferencesModel.terminalInterpreter = termInterp.titleOfSelectedItem!
-            print("PopUpButton 2: \(termInterp.titleOfSelectedItem!)")
-            print("Preferences: \(preferencesModel.terminalInterpreter)")
+            #if DEBUG
+                print("PopUpButton 2: \(termInterp.titleOfSelectedItem!)")
+                print("Preferences: \(preferencesModel.terminalInterpreter)")
+            #endif
         }
         else {
             NSLog("")
@@ -130,6 +141,7 @@ class AppearanceViewController: NSViewController {
     }
 
     /**
+     *
      */
     @IBAction func changeTerminalFont(_ sender: Any) {
         //
@@ -141,14 +153,26 @@ class AppearanceViewController: NSViewController {
     }
 
 
+    /**
+     *
+     */
     @IBAction func changeBackgroundColor(_ sender: Any) {
         //
         preferencesModel.colorBackground = backColor.color
+        #if DEBUG
+            print("backgroundColor selected: \(backColor.color)")
+        #endif
     }
 
 
+    /**
+     *
+     */
     @IBAction func changeForegroundColor(_ sender: Any) {
         //
         preferencesModel.colorForeground = frontColor.color
+        #if DEBUG
+            print("foregroundColor selected: \(frontColor.color)")
+        #endif
     }
 }

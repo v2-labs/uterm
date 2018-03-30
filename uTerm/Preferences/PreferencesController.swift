@@ -8,28 +8,38 @@
 
 import Cocoa
 
-class PreferencesController: NSWindowController, NSToolbarDelegate {
+class PreferencesController: NSWindowController {
+    // MARK: - Properties
     // Tie the controller to its XIB file.
     override var windowNibName: NSNib.Name {
         return NSNib.Name("PreferencesPanel")
     }
     // Define toolbar elements names
-    let toolbarNames = ["General",
-                        "Appearance",
-                        "Advanced"]
+    let toolbarNames = [
+        "General",
+        "Appearance",
+        "Advanced"
+    ]
     // Define toolbar elements definitions
-    let toolbarItems = ["General":    ["label":    "General",
-                                       "palette":  "General",
-                                       "tooltip":  "General options",
-                                       "image":    "NSPreferencesGeneral"],
-                        "Appearance": ["label":    "Appearance",
-                                       "palette":  "Appearance",
-                                       "tooltip":  "Appearance options",
-                                       "image":    "Appearance"],
-                        "Advanced":   ["label":    "Advanced",
-                                       "palette":  "Advanced",
-                                       "tooltip":  "Advanced options",
-                                       "image":    "NSAdvanced"]
+    let toolbarItems = [
+        "General": [
+            "label":   "General",
+            "palette": "General",
+            "tooltip": "General options",
+            "image":   "NSPreferencesGeneral"
+        ],
+        "Appearance": [
+            "label":   "Appearance",
+            "palette": "Appearance",
+            "tooltip": "Appearance options",
+            "image":   "Appearance"
+        ],
+        "Advanced": [
+            "label":   "Advanced",
+            "palette": "Advanced",
+            "tooltip": "Advanced options",
+            "image":   "NSAdvanced"
+        ]
     ]
     // Default properties' view control
     let defaultView = "General"
@@ -41,8 +51,8 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
     // MARK: - PreferencesController
 
     /**
-        Implement this method to handle any initialization after your window controller's window
-        has been loaded from its nib file.
+     *  Implement this method to handle any initialization after your window
+     *  controller's window has been loaded from its nib file.
      */
     override func windowDidLoad() {
         super.windowDidLoad()
@@ -55,9 +65,19 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         }
     }
 
+    // MARK: - PreferencesController action methods
+
+    /**
+     * Managament of preference NSPanel views to display
+     */
+    @IBAction func viewSelected(sender: NSToolbarItem) {
+        self.loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
+    }
+
     // MARK: - PreferencesController private methods
 
     /**
+     *
      */
     fileprivate func setupWindowToolbar(toolbarName: String) -> NSToolbar {
         // Create the preferences toolbar element for tabview control
@@ -71,6 +91,9 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         return toolbar
     }
 
+    /**
+     *
+     */
     fileprivate func loadView(viewIdentifier: String, withAnimation shouldAnimate:Bool) {
         if self.currentView == viewIdentifier {
             return
@@ -100,22 +123,17 @@ class PreferencesController: NSWindowController, NSToolbarDelegate {
         let newHeight = currentViewRect.size.height + winHeader
         let newFrame = NSMakeRect(windowRect.origin.x, yPos, currentViewRect.size.width, newHeight)
         // Adjust the window for the new size (with possible animation), then set new view
-        // the sequence of operations are really important for the final visual effect
+        // the sequence of operations are really important for the final visual effect.
         self.window!.contentView = nil
         self.window!.title = self.currentView
         self.window!.setFrame(newFrame, display: true, animate: shouldAnimate)
         self.window!.contentView = newView
     }
+}
 
-    // MARK: - PreferencesController action methods
 
-    // Managament of preference NSPanel views
-    @IBAction func viewSelected(sender: NSToolbarItem) {
-        self.loadView(viewIdentifier: sender.itemIdentifier.rawValue, withAnimation: true)
-    }
-
-    // MARK: - NSToolbarDelegate
-
+// MARK: - NSToolbarDelegate
+extension PreferencesController: NSToolbarDelegate {
     // Implement ToolbarDelegate methods that control the NSPanel ViewController
     func toolbar(_ toolbar: NSToolbar, itemForItemIdentifier itemIdentifier: NSToolbarItem.Identifier, willBeInsertedIntoToolbar flag: Bool) -> NSToolbarItem?
     {

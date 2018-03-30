@@ -10,6 +10,7 @@ import Cocoa
 import MASShortcut
 
 class GeneralViewController: NSViewController {
+    // MARK: - Properties
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
         return NSNib.Name("PreferencesGeneralView")
@@ -23,7 +24,7 @@ class GeneralViewController: NSViewController {
     // Values for some view controls (should be defined somewhere else?).
     let activationModes = ["Screen", "Window"]
 
-    // MARK: - GeneralViewController delegate methods
+    // MARK: - GeneralViewController
 
     /**
      */
@@ -49,12 +50,15 @@ class GeneralViewController: NSViewController {
     // MARK: - GeneralViewController action methods
 
     /**
+     *
      */
     @IBAction func launchAtLogin(_ sender: Any) {
         if let launchAtLoginCheck = sender as? NSButton {
             preferencesModel.launchAtLogin = (launchAtLoginCheck.state == NSControl.StateValue.on)
-            print("launchAtLogin control: \(launchAtLoginCheck.state)")
-            print("launchAtLogin preferences: \(preferencesModel.launchAtLogin)")
+            #if DEBUG
+                print("launchAtLogin control: \(launchAtLoginCheck.state)")
+                print("launchAtLogin preferences: \(preferencesModel.launchAtLogin)")
+            #endif
         }
         else {
             NSLog("")
@@ -62,12 +66,17 @@ class GeneralViewController: NSViewController {
     }
 
     /**
+     *
      */
     @IBAction func activationHotkey(_ sender: Any) {
         if let activationHotkey = sender as? MASShortcutView {
+            let usedkey = PreferencesModel.Keys.ActivationHotKey
+            var name = usedkey.rawValue
             preferencesModel.activationHotKey = activationHotkey.shortcutValue
-            print("activationHotkey control: \(activationHotkey.shortcutValue)")
-            print("activationHotkey preference: \(preferencesModel.activationHotKey)")
+            #if DEBUG
+                print("activationHotkey control: \(activationHotkey.shortcutValue)")
+                print("activationHotkey preference: \(preferencesModel.activationHotKey)")
+            #endif
         }
         else {
             NSLog("")
@@ -75,12 +84,15 @@ class GeneralViewController: NSViewController {
     }
 
     /**
+     *
      */
     @IBAction func activationMode(_ sender: Any) {
         if let activationModeItem = sender as? NSPopUpButton {
             preferencesModel.kindOfActivation = activationModeItem.titleOfSelectedItem!
-            print("kindOfActivation control: \(activationModeItem.titleOfSelectedItem!)")
-            print("kindOfActivation preference: \(preferencesModel.kindOfActivation)")
+            #if DEBUG
+                print("kindOfActivation control: \(activationModeItem.titleOfSelectedItem!)")
+                print("kindOfActivation preference: \(preferencesModel.kindOfActivation)")
+            #endif
         }
         else {
             NSLog("")
@@ -90,6 +102,7 @@ class GeneralViewController: NSViewController {
     // MARK: - GeneralViewController private methods
 
     /**
+     *
      */
     fileprivate func setupViewElements() {
         //
@@ -98,16 +111,15 @@ class GeneralViewController: NSViewController {
     }
 
     /**
+     *
      */
     fileprivate func updateViewElements() {
         // Update the view controls contents
         // LaunchAtLogin
         launchAtLogin.state = preferencesModel.launchAtLogin ?
             NSControl.StateValue.on : NSControl.StateValue.off
-        print("launchAtLogin checkbox: \(launchAtLogin.state)")
         // ActivationHotKey
         activationHotkey.shortcutValue = preferencesModel.activationHotKey
-        print("activationHotkey value: \(activationHotkey.shortcutValue)")
         // KindOfActivation
         if activationModes.contains(preferencesModel.kindOfActivation) {
             activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)
@@ -115,6 +127,10 @@ class GeneralViewController: NSViewController {
         else {
             activationMode.selectItem(withTitle: preferencesModel.kindOfActivation)
         }
-        print("activationMode selection: \(activationMode.titleOfSelectedItem!)")
+        #if DEBUG
+            print("launchAtLogin checkbox: \(launchAtLogin.state)")
+            print("activationHotkey value: \(activationHotkey.shortcutValue)")
+            print("activationMode selection: \(activationMode.titleOfSelectedItem!)")
+        #endif
     }
 }

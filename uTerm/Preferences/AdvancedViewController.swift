@@ -8,8 +8,7 @@
 
 import Cocoa
 
-class AdvancedViewController: NSViewController,
-                              NSTableViewDelegate, NSTableViewDataSource {
+class AdvancedViewController: NSViewController {
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
         return NSNib.Name("PreferencesAdvancedView")
@@ -23,6 +22,7 @@ class AdvancedViewController: NSViewController,
     // MARK: - AdvancedViewController delegate methods
 
     /**
+     *
      */
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +30,7 @@ class AdvancedViewController: NSViewController,
     }
 
     /**
+     *
      */
     override func viewWillAppear() {
         super.viewWillAppear()
@@ -39,12 +40,15 @@ class AdvancedViewController: NSViewController,
     // MARK: - AdvancedViewController action methods
 
     /**
+     *
      */
     @IBAction func loginMode(_ sender: Any) {
         if let loginModeCheck = sender as? NSButton {
             preferencesModel.terminalUseLogin = (loginModeCheck.state == NSControl.StateValue.on)
-            print("loginMode control: \(loginModeCheck.state)")
-            print("loginMode preference: \(preferencesModel.terminalUseLogin)")
+            #if DEBUG
+                print("loginMode control: \(loginModeCheck.state)")
+                print("loginMode preference: \(preferencesModel.terminalUseLogin)")
+            #endif
         }
         else {
             NSLog("")
@@ -52,6 +56,7 @@ class AdvancedViewController: NSViewController,
     }
 
     /**
+     *
      */
     @IBAction func modifyTableRows(_ sender: Any) {
         //
@@ -59,7 +64,9 @@ class AdvancedViewController: NSViewController,
             // Adding new environment variable to the list
             if modifyTableRows.selectedSegment == 0 {
                 // Inform the selected segment
-                print("Segment 0 was selected")
+                #if DEBUG
+                    print("Segment 0 was selected")
+                #endif
                 // Define the insertion point
                 let position = environmentVars.selectedRow == -1 ? preferencesModel.terminalEnvironment.count - 1 : environmentVars.selectedRow
                 //
@@ -74,7 +81,9 @@ class AdvancedViewController: NSViewController,
             // Remove *selected* environment variable from the list
             if modifyTableRows.selectedSegment == 1 {
                 // Inform the selected segment
-                print("Segment 1 was selected")
+                #if DEBUG
+                    print("Segment 1 was selected")
+                #endif
                 // Only remove *SELECTED* environment variables
                 if environmentVars.selectedRow != -1 {
                     //
@@ -91,6 +100,7 @@ class AdvancedViewController: NSViewController,
     }
 
     /**
+     *
      */
     @IBAction func resetTableRows(_ sender: Any) {
         preferencesModel.resetTerminalEnvironment()
@@ -100,6 +110,7 @@ class AdvancedViewController: NSViewController,
     // MARK: - AdvancedViewController private methods
 
     /**
+     *
      */
     fileprivate func setupViewElements() {
         // Configure the TableViewDelegate
@@ -109,17 +120,23 @@ class AdvancedViewController: NSViewController,
     }
 
     /**
+     *
      */
     fileprivate func updateViewElements() {
         //
         loginMode.state = preferencesModel.terminalUseLogin ?
             NSControl.StateValue.on : NSControl.StateValue.off
-        print("loginMode checkbox: \(loginMode.state)")
+        #if DEBUG
+            print("loginMode checkbox: \(loginMode.state)")
+        #endif
     }
+}
 
-    // MARK: - NSTableViewDelegate protocol methods
 
+// MARK: - NSTableViewDelegate
+extension AdvancedViewController: NSTableViewDelegate {
     /**
+     *
      */
     func tableViewSelectionDidChange(_ notification: Notification) {
         //
@@ -130,25 +147,33 @@ class AdvancedViewController: NSViewController,
             //
         }
     }
+}
 
-    // MARK: - NSTableViewDataSource protocol methods
 
+// MARK: - NSTableViewDataSource
+extension AdvancedViewController: NSTableViewDataSource {
     /**
+     *
      */
     func numberOfRows(in tableView: NSTableView) -> Int {
         return preferencesModel.terminalEnvironment.count
     }
 
     /**
+     *
      */
     func tableView(_ tableView: NSTableView,
                    objectValueFor tableColumn: NSTableColumn?,
                    row: Int) -> Any? {
         let dictRow = preferencesModel.terminalEnvironment[row]
-        print("Row element: \(dictRow)")
-        print("Column Key: \(tableColumn!.identifier.rawValue)")
+        #if DEBUG
+            print("Row element: \(dictRow)")
+            print("Column Key: \(tableColumn!.identifier.rawValue)")
+        #endif
         if let element = dictRow[tableColumn!.identifier.rawValue] {
-            print("Column element: \(element)")
+            #if DEBUG
+                print("Column element: \(element)")
+            #endif
             return element
         }
         else {
@@ -157,15 +182,17 @@ class AdvancedViewController: NSViewController,
     }
 
     /**
+     *
      */
     func tableView(_ aTableView: NSTableView,
                    setObjectValue anObject: Any?,
                    for aTableColumn: NSTableColumn?,
                    row rowIndex: Int) {
-        //
-        print("anObject: \(String(describing: anObject))")
-        print("aTableColumn: \(String(describing: aTableColumn))")
-        print("rowIndex: \(rowIndex)")
+        #if DEBUG
+            print("anObject: \(String(describing: anObject))")
+            print("aTableColumn: \(String(describing: aTableColumn))")
+            print("rowIndex: \(rowIndex)")
+        #endif
         //
         if let newValue = anObject as? String,
            let tableColumn = aTableColumn {
