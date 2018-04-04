@@ -14,21 +14,6 @@ class PreferencesModel: NSObject {
     static let shared = PreferencesModel()
     // Get the instance of user preferences
     let userDefaults = UserDefaults()
-    // Prepare an enum for the stored user' preferences keys
-    enum Keys: String {
-        case LaunchAtLogin = "launchAtLogin"
-        case ActivationHotKey = "activationHotKey"
-        case KindOfActivation = "kindOfActivation"
-        case TerminalType = "terminalType"
-        case TerminalInterpreter = "terminalInterpreter"
-        case TerminalFont = "terminalFont"
-        case ColorBackground = "colorBackground"
-        case ColorForeground = "colorForeground"
-        case TerminalTextAntialias = "terminalTextAntialias"
-        case KeepActionsResults = "keepActionsResults"
-        case TerminalUseLogin = "terminalUseLogin"
-        case TerminalEnvironment = "terminalEnvironment"
-    }
     // Some default values used internally
     private let defaultTerminalEnvironment: [[String:String]] = [
         [
@@ -49,23 +34,23 @@ class PreferencesModel: NSObject {
         ]
     ]
     private let defaultShortcut: MASShortcut!
-    private let defaultTerminalFont: NSFont = NSFont.userFixedPitchFont(ofSize: CGFloat(0.0))!
-    private let defaultColorBackground: NSColor = NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70)
-    private let defaultColorForeground: NSColor = NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
+    private let defaultTerminalFont = NSFont.userFixedPitchFont(ofSize: CGFloat(0.0))!
+    private let defaultColorBackground = NSColor(red: 0.20, green: 0.20 ,blue: 0.20, alpha: 0.70)
+    private let defaultColorForeground = NSColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.00)
 
     // Computed properties based on the store Keys above
-    var launchAtLogin: Bool {
+    @objc dynamic var launchAtLogin: Bool {
         get {
-            return userDefaults.bool(forKey: Keys.LaunchAtLogin.rawValue)
+            return userDefaults.bool(forKey: UserDefaults.Key.LaunchAtLogin)
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.LaunchAtLogin.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.LaunchAtLogin)
         }
     }
 
-    var activationHotKey: MASShortcut {
+    @objc dynamic var activationHotKey: MASShortcut {
         get {
-            if let data = userDefaults.object(forKey: Keys.ActivationHotKey.rawValue) as? NSData {
+            if let data = userDefaults.object(forKey: UserDefaults.Key.ActivationHotKey) as? NSData {
                 if let shortcut = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? MASShortcut {
                     return shortcut
                 }
@@ -74,31 +59,31 @@ class PreferencesModel: NSObject {
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            userDefaults.set(data, forKey: Keys.ActivationHotKey.rawValue)
+            userDefaults.set(data, forKey: UserDefaults.Key.ActivationHotKey)
         }
     }
 
-    var terminalType: String {
+    @objc dynamic var terminalType: String {
         get {
-            return userDefaults.string(forKey: Keys.TerminalType.rawValue)!
+            return userDefaults.string(forKey: UserDefaults.Key.TerminalType)!
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalType.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.TerminalType)
         }
     }
 
-    var terminalInterpreter: String {
+    @objc dynamic var terminalInterpreter: String {
         get {
-            return userDefaults.string(forKey: Keys.TerminalInterpreter.rawValue)!
+            return userDefaults.string(forKey: UserDefaults.Key.TerminalInterpreter)!
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalInterpreter.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.TerminalInterpreter)
         }
     }
 
-    var terminalFont: NSFont {
+    @objc dynamic var terminalFont: NSFont {
         get {
-            if let data = userDefaults.object(forKey: Keys.TerminalFont.rawValue) as? NSData {
+            if let data = userDefaults.object(forKey: UserDefaults.Key.TerminalFont) as? NSData {
                 if let font = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? NSFont {
                     return font
                 }
@@ -107,13 +92,13 @@ class PreferencesModel: NSObject {
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            userDefaults.set(data, forKey: Keys.TerminalFont.rawValue)
+            userDefaults.set(data, forKey: UserDefaults.Key.TerminalFont)
         }
     }
 
-    var colorBackground: NSColor {
+    @objc dynamic var colorBackground: NSColor {
         get {
-            if let data = userDefaults.object(forKey: Keys.ColorBackground.rawValue) as? NSData {
+            if let data = userDefaults.object(forKey: UserDefaults.Key.ColorBackground) as? NSData {
                 if let backColor = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? NSColor {
                     return backColor
                 }
@@ -122,13 +107,13 @@ class PreferencesModel: NSObject {
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            userDefaults.set(data, forKey: Keys.ColorBackground.rawValue)
+            userDefaults.set(data, forKey: UserDefaults.Key.ColorBackground)
         }
     }
 
-    var colorForeground: NSColor {
+    @objc dynamic var colorForeground: NSColor {
         get {
-            if let data = userDefaults.object(forKey: Keys.ColorForeground.rawValue) as? NSData {
+            if let data = userDefaults.object(forKey: UserDefaults.Key.ColorForeground) as? NSData {
                 if let foreColor = NSKeyedUnarchiver.unarchiveObject(with: data as Data) as? NSColor {
                     return foreColor
                 }
@@ -137,52 +122,52 @@ class PreferencesModel: NSObject {
         }
         set {
             let data = NSKeyedArchiver.archivedData(withRootObject: newValue)
-            userDefaults.set(data, forKey: Keys.ColorForeground.rawValue)
+            userDefaults.set(data, forKey: UserDefaults.Key.ColorForeground)
         }
     }
 
-    var terminalTextAntialias: Bool {
+    @objc dynamic var terminalTextAntialias: Bool {
         get {
-            return userDefaults.bool(forKey: Keys.TerminalTextAntialias.rawValue)
+            return userDefaults.bool(forKey: UserDefaults.Key.TerminalTextAntialias)
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalTextAntialias.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.TerminalTextAntialias)
         }
     }
     
-    var keepActionsResults: Int {
+    @objc dynamic var keepActionsResults: Int {
         get {
-            return userDefaults.integer(forKey: Keys.KeepActionsResults.rawValue)
+            return userDefaults.integer(forKey: UserDefaults.Key.KeepActionsResults)
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.KeepActionsResults.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.KeepActionsResults)
         }
     }
 
-    var kindOfActivation: String {
+    @objc dynamic var kindOfActivation: String {
         get {
-            return userDefaults.string(forKey: Keys.KindOfActivation.rawValue)!
+            return userDefaults.string(forKey: UserDefaults.Key.KindOfActivation)!
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.KindOfActivation.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.KindOfActivation)
         }
     }
     
-    var terminalUseLogin: Bool {
+    @objc dynamic var terminalUseLogin: Bool {
         get {
-            return userDefaults.bool(forKey: Keys.TerminalUseLogin.rawValue)
+            return userDefaults.bool(forKey: UserDefaults.Key.TerminalUseLogin)
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalUseLogin.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.TerminalUseLogin)
         }
     }
 
-    var terminalEnvironment: [[String: String]] {
+    @objc dynamic var terminalEnvironment: [[String: String]] {
         get {
-            return userDefaults.array(forKey: Keys.TerminalEnvironment.rawValue) as! [[String: String]]
+            return userDefaults.array(forKey: UserDefaults.Key.TerminalEnvironment) as! [[String: String]]
         }
         set {
-            userDefaults.set(newValue, forKey: Keys.TerminalEnvironment.rawValue)
+            userDefaults.set(newValue, forKey: UserDefaults.Key.TerminalEnvironment)
         }
     }
 
@@ -200,18 +185,18 @@ class PreferencesModel: NSObject {
     // Set factory defaults
     private func registerFactoryDefaults() {
         let factoryDefaults = [
-            Keys.LaunchAtLogin.rawValue: NSNumber(value: false),
-            Keys.ActivationHotKey.rawValue: NSKeyedArchiver.archivedData(withRootObject: defaultShortcut),
-            Keys.KindOfActivation.rawValue: "Screen",
-            Keys.TerminalType.rawValue: "dumb",
-            Keys.TerminalInterpreter.rawValue: "/bin/bash",
-            Keys.TerminalFont.rawValue: NSKeyedArchiver.archivedData(withRootObject: defaultTerminalFont),
-            Keys.ColorBackground.rawValue: NSKeyedArchiver.archivedData(withRootObject: defaultColorBackground),
-            Keys.ColorForeground.rawValue: NSKeyedArchiver.archivedData(withRootObject: defaultColorForeground),
-            Keys.TerminalTextAntialias.rawValue: NSNumber(value: true),
-            Keys.KeepActionsResults.rawValue: Int(5),
-            Keys.TerminalUseLogin.rawValue: NSNumber(value: false),
-            Keys.TerminalEnvironment.rawValue: defaultTerminalEnvironment,
+            UserDefaults.Key.LaunchAtLogin: NSNumber(value: false),
+            UserDefaults.Key.ActivationHotKey: NSKeyedArchiver.archivedData(withRootObject: defaultShortcut),
+            UserDefaults.Key.KindOfActivation: "Screen",
+            UserDefaults.Key.TerminalType: "dumb",
+            UserDefaults.Key.TerminalInterpreter: "/bin/bash",
+            UserDefaults.Key.TerminalFont: NSKeyedArchiver.archivedData(withRootObject: defaultTerminalFont),
+            UserDefaults.Key.ColorBackground: NSKeyedArchiver.archivedData(withRootObject: defaultColorBackground),
+            UserDefaults.Key.ColorForeground: NSKeyedArchiver.archivedData(withRootObject: defaultColorForeground),
+            UserDefaults.Key.TerminalTextAntialias: NSNumber(value: true),
+            UserDefaults.Key.KeepActionsResults: Int(5),
+            UserDefaults.Key.TerminalUseLogin: NSNumber(value: false),
+            UserDefaults.Key.TerminalEnvironment: defaultTerminalEnvironment,
         ] as [String : Any]
         // Register userDefaults with factoryDefaults
         userDefaults.register(defaults: factoryDefaults)
@@ -220,28 +205,28 @@ class PreferencesModel: NSObject {
     // Set terminal font to defaults
     func resetTerminalFont() {
         let data = NSKeyedArchiver.archivedData(withRootObject: defaultTerminalFont)
-        userDefaults.set(data, forKey: Keys.TerminalFont.rawValue)
+        userDefaults.set(data, forKey: UserDefaults.Key.TerminalFont)
     }
 
     // Set terminal environment to default
     func resetTerminalEnvironment() {
-        userDefaults.set(defaultTerminalEnvironment, forKey: Keys.TerminalEnvironment.rawValue)
+        userDefaults.set(defaultTerminalEnvironment, forKey: UserDefaults.Key.TerminalEnvironment)
     }
 
     // Reset all settings
     func reset() {
-        userDefaults.removeObject(forKey: Keys.LaunchAtLogin.rawValue)
-        userDefaults.removeObject(forKey: Keys.ActivationHotKey.rawValue)
-        userDefaults.removeObject(forKey: Keys.KindOfActivation.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalType.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalInterpreter.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalFont.rawValue)
-        userDefaults.removeObject(forKey: Keys.ColorBackground.rawValue)
-        userDefaults.removeObject(forKey: Keys.ColorForeground.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalTextAntialias.rawValue)
-        userDefaults.removeObject(forKey: Keys.KeepActionsResults.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalUseLogin.rawValue)
-        userDefaults.removeObject(forKey: Keys.TerminalEnvironment.rawValue)
+        userDefaults.removeObject(forKey: UserDefaults.Key.LaunchAtLogin)
+        userDefaults.removeObject(forKey: UserDefaults.Key.ActivationHotKey)
+        userDefaults.removeObject(forKey: UserDefaults.Key.KindOfActivation)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalType)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalInterpreter)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalFont)
+        userDefaults.removeObject(forKey: UserDefaults.Key.ColorBackground)
+        userDefaults.removeObject(forKey: UserDefaults.Key.ColorForeground)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalTextAntialias)
+        userDefaults.removeObject(forKey: UserDefaults.Key.KeepActionsResults)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalUseLogin)
+        userDefaults.removeObject(forKey: UserDefaults.Key.TerminalEnvironment)
         synchronize()
     }
 

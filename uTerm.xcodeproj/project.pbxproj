@@ -29,6 +29,7 @@
 		CF2E5A621DC4168800EC9007 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF2E5A5F1DC4168800EC9007 /* Foundation.framework */; };
 		CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */; };
 		CF458F2B1FF58E4800281E23 /* AboutPanel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF458F2A1FF58E4800281E23 /* AboutPanel.swift */; };
+		CF75F78120708A4900281E23 /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF75F78020708A4900281E23 /* UserDefaults.swift */; };
 		CFCC8F211E9E885800EC9007 /* RunManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCC8F201E9E885800EC9007 /* RunManager.swift */; };
 		CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF62E41FA918EF00C5038F /* PreferencesController.swift */; };
 		E6270E0C6D33CA6463741E5B /* Pods_uTerm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2582237ADEA249DD5C3E4443 /* Pods_uTerm.framework */; };
@@ -83,6 +84,7 @@
 		CF2E5A5F1DC4168800EC9007 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusMenuController.swift; sourceTree = "<group>"; };
 		CF458F2A1FF58E4800281E23 /* AboutPanel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutPanel.swift; sourceTree = "<group>"; };
+		CF75F78020708A4900281E23 /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		CF938C4C1DC9123200EC9007 /* set_build_number.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = set_build_number.sh; sourceTree = "<group>"; };
 		CFCC8F201E9E885800EC9007 /* RunManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunManager.swift; sourceTree = "<group>"; };
 		CFDF62E41FA918EF00C5038F /* PreferencesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				CF66BCF01EE8FFA400EC9007 /* BuildScripts */,
 				CF0CAB651DC258CC00EC9007 /* AppDelegate.swift */,
 				CF458F2A1FF58E4800281E23 /* AboutPanel.swift */,
+				CF75F78020708A4900281E23 /* UserDefaults.swift */,
 				CF1CAF501FBA30FB003CC620 /* PreferencesModel.swift */,
 				CF2E5A631DC4E16000EC9007 /* StatusMenuController.swift */,
 				CFDF62E61FA9190C00C5038F /* Preferences */,
@@ -457,6 +460,7 @@
 				CF1CAF4F1FBA3046003CC620 /* GeneralViewController.swift in Sources */,
 				CF014DD81FE8B9FB00281E23 /* TerminalController.swift in Sources */,
 				CF2E5A641DC4E16000EC9007 /* StatusMenuController.swift in Sources */,
+				CF75F78120708A4900281E23 /* UserDefaults.swift in Sources */,
 				CF1CAF511FBA30FB003CC620 /* PreferencesModel.swift in Sources */,
 				CF014DD51FE2E85A00281E23 /* AdvancedViewController.swift in Sources */,
 				CFDF62E51FA918EF00C5038F /* PreferencesController.swift in Sources */,
