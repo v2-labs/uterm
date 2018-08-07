@@ -19,7 +19,7 @@
 	<key>CFBundleShortVersionString</key>
 	<string>0.0.0</string>
 	<key>CFBundleVersion</key>
-	<string>&quot;Build&quot; and &quot;Version&quot; set by &quot;Build Phase&quot; &gt; &quot;Set Build Number&quot;</string>
+	<string>"Build" and "Version" set by "Build Phase" &gt; "Set Build Number"</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.utilities</string>
 	<key>LSMinimumSystemVersion</key>
