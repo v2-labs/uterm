@@ -1,7 +1,7 @@
 # project 'uTerm.xcodeproj'
 
 # Uncomment the next line to define a global platform for your project
-# platform :macos, '10.10'
+platform :macos, '10.11'
 
 target 'uTerm' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
