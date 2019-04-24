@@ -162,7 +162,7 @@ class GeneralViewController: NSViewController {
         }
         #if DEBUG
             debugPrint("launchAtLogin checkbox: \(launchAtLogin.state)")
-            debugPrint("activationHotkey value: \(activationHotkey.shortcutValue)")
+            debugPrint("activationHotkey value: \(String(describing: activationHotkey.shortcutValue))")
             debugPrint("activationMode selection: \(activationMode.titleOfSelectedItem!)")
         #endif
     }
