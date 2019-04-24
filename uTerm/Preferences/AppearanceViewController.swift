@@ -12,7 +12,7 @@ class AppearanceViewController: NSViewController {
     // MARK: - Properties
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
-        return NSNib.Name("PreferencesAppearanceView")
+        return "PreferencesAppearanceView"
     }
     // List of supported terminal types (update to a dynamic gathering)
     private let termTypes = ["dumb", "vt-100", "term-16color", "term-256color"]

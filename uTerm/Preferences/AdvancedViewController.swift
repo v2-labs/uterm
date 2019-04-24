@@ -11,7 +11,7 @@ import Cocoa
 class AdvancedViewController: NSViewController {
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
-        return NSNib.Name("PreferencesAdvancedView")
+        return "PreferencesAdvancedView"
     }
     // Access to preferencesModel singleton
     private let preferencesModel = PreferencesModel.shared

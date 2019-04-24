@@ -19,7 +19,7 @@ class GeneralViewController: NSViewController {
     // MARK: - Properties
     // Tie the controller to its XIB file.
     override var nibName: NSNib.Name {
-        return NSNib.Name("PreferencesGeneralView")
+        return "PreferencesGeneralView"
     }
     // Access the userDefaults preferences model singleton.
     private let preferencesModel = PreferencesModel.shared

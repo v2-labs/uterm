@@ -11,7 +11,7 @@ import Cocoa
 class TerminalController: NSWindowController {
     // Tie the controller to its XIB file.
     override var windowNibName: NSNib.Name {
-        return NSNib.Name("TerminalPanel")
+        return "TerminalPanel"
     }
 
     // MARK: - .

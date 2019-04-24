@@ -12,7 +12,7 @@ class PreferencesController: NSWindowController {
     // MARK: - Properties
     // Tie the controller to its XIB file.
     override var windowNibName: NSNib.Name {
-        return NSNib.Name("PreferencesPanel")
+        return "PreferencesPanel"
     }
     // Define toolbar elements names
     let toolbarNames = [
@@ -81,7 +81,7 @@ class PreferencesController: NSWindowController {
      */
     fileprivate func setupWindowToolbar(toolbarName: String) -> NSToolbar {
         // Create the preferences toolbar element for tabview control
-        let toolbar = NSToolbar(identifier: NSToolbar.Identifier(rawValue: toolbarName))
+        let toolbar = NSToolbar(identifier: toolbarName)
         toolbar.displayMode = .iconAndLabel
         toolbar.sizeMode = .regular
         toolbar.allowsUserCustomization = false
@@ -141,7 +141,7 @@ extension PreferencesController: NSToolbarDelegate {
         for tbItem in self.toolbarNames {
             if itemIdentifier.rawValue == tbItem {
                 var tbItemData = self.toolbarItems[tbItem]
-                let imageNamed = NSImage(named: NSImage.Name(rawValue: tbItemData!["image"]!))
+                let imageNamed = NSImage(named: tbItemData!["image"]!)
                 toolbarItem = NSToolbarItem(itemIdentifier: NSToolbarItem.Identifier(rawValue: tbItem))
                 toolbarItem!.label = tbItemData!["label"]!
                 toolbarItem!.paletteLabel = tbItemData!["palette"]!
