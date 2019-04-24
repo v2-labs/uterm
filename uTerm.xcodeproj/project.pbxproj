@@ -306,7 +306,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "v2-labs";
 				TargetAttributes = {
 					CF0CAB611DC258CC00EC9007 = {
@@ -333,10 +333,9 @@
 			};
 			buildConfigurationList = CF0CAB5D1DC258CC00EC9007 /* Build configuration list for PBXProject "uTerm" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
