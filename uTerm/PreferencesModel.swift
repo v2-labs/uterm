@@ -186,7 +186,7 @@ class PreferencesModel: NSObject {
     private func registerFactoryDefaults() {
         let factoryDefaults = [
             UserDefaults.Key.LaunchAtLogin: NSNumber(value: false),
-            UserDefaults.Key.ActivationHotKey: NSKeyedArchiver.archivedData(withRootObject: defaultShortcut),
+            UserDefaults.Key.ActivationHotKey: NSKeyedArchiver.archivedData(withRootObject: defaultShortcut!),
             UserDefaults.Key.KindOfActivation: "Screen",
             UserDefaults.Key.TerminalType: "dumb",
             UserDefaults.Key.TerminalInterpreter: "/bin/bash",
